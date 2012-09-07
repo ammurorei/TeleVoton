@@ -1,0 +1,471 @@
+TsmartcardTest
+v7
+r0
+t368735582.971038
+cCheck dependencies
+cCompileC build/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/main.o /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/main.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+cCompileC build/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/p11_attr.o /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_attr.c normal x86_64 c com.apple.compilers.gcc.4_2
+cCompileC build/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/p11_cert.o /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_cert.c normal x86_64 c com.apple.compilers.gcc.4_2
+cCompileC build/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/p11_err.o /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_err.c normal x86_64 c com.apple.compilers.gcc.4_2
+cCompileC build/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/p11_key.o /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_key.c normal x86_64 c com.apple.compilers.gcc.4_2
+cCompileC build/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/p11_misc.o /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_misc.c normal x86_64 c com.apple.compilers.gcc.4_2
+cCompileC build/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/p11_ops.o /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_ops.c normal x86_64 c com.apple.compilers.gcc.4_2
+cCompileC build/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/p11_rsa.o /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_rsa.c normal x86_64 c com.apple.compilers.gcc.4_2
+cCompileC build/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/p11_slot.o /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_slot.c normal x86_64 c com.apple.compilers.gcc.4_2
+cCompileC build/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/p11_load.o /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_load.c normal x86_64 c com.apple.compilers.gcc.4_2
+cCompileC build/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/libpkcs11.o /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/libpkcs11.c normal x86_64 c com.apple.compilers.gcc.4_2
+cLd /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/Debug/smartcardTest normal x86_64
+
+N/Developer/SDKs/MacOSX10.6.sdk
+c000000004CAA740B00000000000000EE
+t1286239243
+s238
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/assert.h
+c000000004BBD2CE90000000000000DCB
+t1270689001
+s3531
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/fcntl.h
+c000000004BBD2CE900000000000003EA
+t1270689001
+s1002
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/ltdl.h
+c000000004A119A4D0000000000001616
+t1242667597
+s5654
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/openssl/bio.h
+c000000004C23A1830000000000007866
+t1277403523
+s30822
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/openssl/buffer.h
+c000000004C23A18300000000000011D5
+t1277403523
+s4565
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/openssl/crypto.h
+c000000004C23A1830000000000005E99
+t1277403523
+s24217
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/openssl/err.h
+c000000004C23A1830000000000003299
+t1277403523
+s12953
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/openssl/evp.h
+c000000004C23A18300000000000096EA
+t1277403523
+s38634
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/openssl/rsa.h
+c000000004C23A1830000000000004C73
+t1277403523
+s19571
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/openssl/x509.h
+c000000004C23A183000000000000BD3A
+t1277403523
+s48442
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/stdio.h
+c000000004BBD2CE90000000000004174
+t1270689001
+s16756
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/stdlib.h
+c000000004BBD2CE90000000000002DF5
+t1270689001
+s11765
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/string.h
+c000000004BBD2CE90000000000001731
+t1270689001
+s5937
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/sys/stat.h
+c000000004C2399480000000000004A1D
+t1277401416
+s18973
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/sys/types.h
+c000000004C2399480000000000002905
+t1277401416
+s10501
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/termios.h
+c000000004BBD2CE900000000000004D4
+t1270689001
+s1236
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/unistd.h
+c000000004BBD2CE9000000000000563E
+t1270689001
+s22078
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stddef.h
+c000000004A11EB240000000000003197
+t1242688292
+s12695
+
+N/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/Debug/smartcardTest
+t1347042782
+s57432
+
+N/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/libpkcs11.o
+t1347042782
+s13388
+
+N/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/main.o
+t1347042781
+s77608
+
+N/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/p11_attr.o
+t1347042781
+s28612
+
+N/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/p11_cert.o
+t1347042782
+s29608
+
+N/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/p11_err.o
+t1347042782
+s10840
+
+N/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/p11_key.o
+t1347042782
+s39508
+
+N/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/p11_load.o
+t1347042782
+s15500
+
+N/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/p11_misc.o
+t1347042782
+s5492
+
+N/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/p11_ops.o
+t1347042782
+s24484
+
+N/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/p11_rsa.o
+t1347042782
+s13492
+
+N/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/p11_slot.o
+t1347042782
+s33920
+
+N/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/smartcardTest.LinkFileList
+c00000000504A3DDD0000000000000676
+t1347042781
+s1654
+
+N/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/Config.h
+c0000000050487AE3000000000000007A
+t1346927331
+s122
+
+N/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/libp11-int.h
+c000000004DA83284000000000000142D
+t1302868612
+s5165
+i<openssl/bio.h>
+i<openssl/err.h>
+i<openssl/x509.h>
+i<pkcs11.h>
+i"libp11.h"
+
+N/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/libp11.h
+c000000004DA83284000000000000321E
+t1302868612
+s12830
+i<openssl/bio.h>
+i<openssl/err.h>
+i<openssl/x509.h>
+
+N/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/libpkcs11.c
+c00000000504879B200000000000009FF
+t1346927026
+s2559
+i<stdlib.h>
+i<stdio.h>
+i<string.h>
+i<ltdl.h>
+i"libp11-int.h"
+
+N/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_attr.c
+c0000000050487ACB0000000000001019
+t1346927307
+s4121
+i<assert.h>
+i<string.h>
+i"libp11-int.h"
+
+N/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_cert.c
+c000000004DA832840000000000001B6C
+t1302868612
+s7020
+i<config.h>
+i<string.h>
+i"libp11-int.h"
+
+N/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_err.c
+c000000004DA832840000000000001CE6
+t1302868612
+s7398
+i<config.h>
+i"libp11-int.h"
+
+N/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_key.c
+c0000000050487AE70000000000003196
+t1346927335
+s12694
+i<string.h>
+i"libp11-int.h"
+
+N/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_load.c
+c000000005048864F0000000000000BD3
+t1346930255
+s3027
+i<string.h>
+i"libp11-int.h"
+
+N/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_misc.c
+c000000004DA83284000000000000068E
+t1302868612
+s1678
+i<config.h>
+i<string.h>
+i<openssl/crypto.h>
+i"libp11-int.h"
+
+N/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_ops.c
+c000000004DA8328400000000000013C1
+t1302868612
+s5057
+i<config.h>
+i<string.h>
+i"libp11-int.h"
+
+N/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_rsa.c
+c000000004DA832840000000000001139
+t1302868612
+s4409
+i<config.h>
+i<string.h>
+i<openssl/evp.h>
+i<openssl/rsa.h>
+i"libp11-int.h"
+
+N/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_slot.c
+c000000004DA832840000000000002B10
+t1302868612
+s11024
+i<config.h>
+i<string.h>
+i<openssl/buffer.h>
+i"libp11-int.h"
+
+N/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/pkcs11.h
+c000000004DA83284000000000000A5C3
+t1302868612
+s42435
+i<stddef.h>
+
+N/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/main.cpp
+c00000000504A3D6A00000000000011BE
+t1347042666
+s4542
+i<iostream>
+i<sys/types.h>
+i<sys/stat.h>
+i<fcntl.h>
+i<termios.h>
+i<stdio.h>
+i<unistd.h>
+i<string.h>
+i<libp11.h>
+
+N/opt/local/lib/libcrypto.1.0.0.dylib
+c000000004FABECC500000000001C7108
+t1336667333
+s1863944
+
+N/opt/local/lib/libltdl.7.dylib
+c000000004FC71EC40000000000009FF0
+t1338449604
+s40944
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies368735581#368735581#0(0"0(0#1#0"8610660640#0"0#
+
+CCompileC build/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/libpkcs11.o /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/libpkcs11.c normal x86_64 c com.apple.compilers.gcc.4_2
+s368735582.648836
+e368735582.757616
+r1
+xCompileC
+xbuild/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/libpkcs11.o
+x/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/libpkcs11.c
+xnormal
+xx86_64
+xc
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@102"Compile /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/libpkcs11.c368735582#368735582#0(0"0(0#0#94"/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/libpkcs11.c8612758432#1872"    cd /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/smartcardTest-generated-files.hmap -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/smartcardTest-own-target-headers.hmap -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/smartcardTest-all-target-headers.hmap -iquote /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/smartcardTest-project-headers.hmap -F/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/Debug -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/Debug/include -Ilibp11-0.2.8 -Ilibp11-0.2.8/doc -Ilibp11-0.2.8/examples -Ilibp11-0.2.8/m4 -Ilibp11-0.2.8/src -Ilibp11-0.2.8/doc/nonpersistent -Ilibp11-0.2.8/doc/nonpersistent/wiki.out -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/DerivedSources/x86_64 -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/DerivedSources -c /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/libpkcs11.c -o /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/libpkcs11.o0#
+
+CCompileC build/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/main.o /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/main.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+s368735581.475752
+e368735581.961808
+r1
+xCompileC
+xbuild/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/main.o
+x/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/main.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.gcc.4_2
+o/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/main.cpp: In function 'int main(int, char* const*)':
+o/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/main.cpp:25: warning: unused variable 'authkey'
+o/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/main.cpp:27: warning: unused variable 'pubkey'
+o/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/main.cpp:30: warning: unused variable 'random'
+o/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/main.cpp:30: warning: unused variable 'signature'
+o/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/main.cpp:32: warning: unused variable 'password'
+o/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/main.cpp:33: warning: unused variable 'fd'
+o/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/main.cpp:34: warning: unused variable 'siglen'
+oi686-apple-darwin10-gcc-4.2.1: -lcrypto: linker input file unused because linking not done
+lSLF07#2@82"Compile /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/main.cpp368735581#368735581#0(1003"/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/main.cpp: In function 'int main(int, char* const*)':/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/main.cpp:25: warning: unused variable 'authkey'/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/main.cpp:27: warning: unused variable 'pubkey'/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/main.cpp:30: warning: unused variable 'random'/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/main.cpp:30: warning: unused variable 'signature'/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/main.cpp:32: warning: unused variable 'password'/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/main.cpp:33: warning: unused variable 'fd'/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/main.cpp:34: warning: unused variable 'siglen'i686-apple-darwin10-gcc-4.2.1: -lcrypto: linker input file unused because linking not done7(22@25"Unused variable 'authkey'368735581#119#114#0(6@74"/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/main.cpp368735466#25#0#25#0#19"unused variable '*'0(22@24"Unused variable 'pubkey'368735581#233#113#0(6@74"/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/main.cpp368735466#27#0#27#0#19"unused variable '*'0(22@24"Unused variable 'random'368735581#346#113#0(6@74"/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/main.cpp368735466#30#0#30#0#19"unused variable '*'0(22@27"Unused variable 'signature'368735581#459#116#0(6@74"/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/main.cpp368735466#30#0#30#0#19"unused variable '*'0(22@26"Unused variable 'password'368735581#575#115#0(6@74"/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/main.cpp368735466#32#0#32#0#19"unused variable '*'0(22@20"Unused variable 'fd'368735581#690#109#0(6@74"/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/main.cpp368735466#33#0#33#0#19"unused variable '*'0(22@24"Unused variable 'siglen'368735581#799#113#0(6@74"/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/main.cpp368735466#34#0#34#0#19"unused variable '*'0(0#0#74"/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/main.cpp8593765824#1893"    cd /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -fvisibility-inlines-hidden -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/smartcardTest-generated-files.hmap -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/smartcardTest-own-target-headers.hmap -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/smartcardTest-all-target-headers.hmap -iquote /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/smartcardTest-project-headers.hmap -F/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/Debug -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/Debug/include -Ilibp11-0.2.8 -Ilibp11-0.2.8/doc -Ilibp11-0.2.8/examples -Ilibp11-0.2.8/m4 -Ilibp11-0.2.8/src -Ilibp11-0.2.8/doc/nonpersistent -Ilibp11-0.2.8/doc/nonpersistent/wiki.out -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/DerivedSources/x86_64 -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/DerivedSources -lcrypto -D__MACOSX_CORE__ -c /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/main.cpp -o /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/main.o0#
+
+CCompileC build/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/p11_attr.o /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_attr.c normal x86_64 c com.apple.compilers.gcc.4_2
+s368735581.476806
+e368735581.973883
+r1
+xCompileC
+xbuild/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/p11_attr.o
+x/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_attr.c
+xnormal
+xx86_64
+xc
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@101"Compile /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_attr.c368735581#368735581#0(0"0(0#0#93"/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_attr.c8616843808#1870"    cd /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/smartcardTest-generated-files.hmap -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/smartcardTest-own-target-headers.hmap -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/smartcardTest-all-target-headers.hmap -iquote /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/smartcardTest-project-headers.hmap -F/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/Debug -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/Debug/include -Ilibp11-0.2.8 -Ilibp11-0.2.8/doc -Ilibp11-0.2.8/examples -Ilibp11-0.2.8/m4 -Ilibp11-0.2.8/src -Ilibp11-0.2.8/doc/nonpersistent -Ilibp11-0.2.8/doc/nonpersistent/wiki.out -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/DerivedSources/x86_64 -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/DerivedSources -c /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_attr.c -o /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/p11_attr.o0#
+
+CCompileC build/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/p11_cert.o /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_cert.c normal x86_64 c com.apple.compilers.gcc.4_2
+s368735581.961930
+e368735582.310260
+r1
+xCompileC
+xbuild/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/p11_cert.o
+x/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_cert.c
+xnormal
+xx86_64
+xc
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@101"Compile /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_cert.c368735581#368735582#0(0"0(0#0#93"/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_cert.c8609449440#1870"    cd /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/smartcardTest-generated-files.hmap -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/smartcardTest-own-target-headers.hmap -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/smartcardTest-all-target-headers.hmap -iquote /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/smartcardTest-project-headers.hmap -F/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/Debug -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/Debug/include -Ilibp11-0.2.8 -Ilibp11-0.2.8/doc -Ilibp11-0.2.8/examples -Ilibp11-0.2.8/m4 -Ilibp11-0.2.8/src -Ilibp11-0.2.8/doc/nonpersistent -Ilibp11-0.2.8/doc/nonpersistent/wiki.out -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/DerivedSources/x86_64 -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/DerivedSources -c /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_cert.c -o /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/p11_cert.o0#
+
+CCompileC build/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/p11_err.o /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_err.c normal x86_64 c com.apple.compilers.gcc.4_2
+s368735581.973980
+e368735582.116775
+r1
+xCompileC
+xbuild/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/p11_err.o
+x/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_err.c
+xnormal
+xx86_64
+xc
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@100"Compile /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_err.c368735581#368735582#0(0"0(0#0#92"/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_err.c8607135296#1868"    cd /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/smartcardTest-generated-files.hmap -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/smartcardTest-own-target-headers.hmap -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/smartcardTest-all-target-headers.hmap -iquote /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/smartcardTest-project-headers.hmap -F/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/Debug -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/Debug/include -Ilibp11-0.2.8 -Ilibp11-0.2.8/doc -Ilibp11-0.2.8/examples -Ilibp11-0.2.8/m4 -Ilibp11-0.2.8/src -Ilibp11-0.2.8/doc/nonpersistent -Ilibp11-0.2.8/doc/nonpersistent/wiki.out -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/DerivedSources/x86_64 -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/DerivedSources -c /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_err.c -o /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/p11_err.o0#
+
+CCompileC build/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/p11_key.o /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_key.c normal x86_64 c com.apple.compilers.gcc.4_2
+s368735582.116867
+e368735582.343589
+r1
+xCompileC
+xbuild/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/p11_key.o
+x/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_key.c
+xnormal
+xx86_64
+xc
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@100"Compile /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_key.c368735582#368735582#0(0"0(0#0#92"/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_key.c8612550912#1868"    cd /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/smartcardTest-generated-files.hmap -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/smartcardTest-own-target-headers.hmap -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/smartcardTest-all-target-headers.hmap -iquote /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/smartcardTest-project-headers.hmap -F/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/Debug -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/Debug/include -Ilibp11-0.2.8 -Ilibp11-0.2.8/doc -Ilibp11-0.2.8/examples -Ilibp11-0.2.8/m4 -Ilibp11-0.2.8/src -Ilibp11-0.2.8/doc/nonpersistent -Ilibp11-0.2.8/doc/nonpersistent/wiki.out -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/DerivedSources/x86_64 -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/DerivedSources -c /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_key.c -o /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/p11_key.o0#
+
+CCompileC build/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/p11_load.o /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_load.c normal x86_64 c com.apple.compilers.gcc.4_2
+s368735582.573773
+e368735582.701046
+r1
+xCompileC
+xbuild/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/p11_load.o
+x/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_load.c
+xnormal
+xx86_64
+xc
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@101"Compile /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_load.c368735582#368735582#0(0"0(0#0#93"/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_load.c8616096256#1870"    cd /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/smartcardTest-generated-files.hmap -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/smartcardTest-own-target-headers.hmap -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/smartcardTest-all-target-headers.hmap -iquote /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/smartcardTest-project-headers.hmap -F/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/Debug -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/Debug/include -Ilibp11-0.2.8 -Ilibp11-0.2.8/doc -Ilibp11-0.2.8/examples -Ilibp11-0.2.8/m4 -Ilibp11-0.2.8/src -Ilibp11-0.2.8/doc/nonpersistent -Ilibp11-0.2.8/doc/nonpersistent/wiki.out -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/DerivedSources/x86_64 -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/DerivedSources -c /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_load.c -o /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/p11_load.o0#
+
+CCompileC build/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/p11_misc.o /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_misc.c normal x86_64 c com.apple.compilers.gcc.4_2
+s368735582.310352
+e368735582.429104
+r1
+xCompileC
+xbuild/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/p11_misc.o
+x/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_misc.c
+xnormal
+xx86_64
+xc
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@101"Compile /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_misc.c368735582#368735582#0(0"0(0#0#93"/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_misc.c8611890688#1870"    cd /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/smartcardTest-generated-files.hmap -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/smartcardTest-own-target-headers.hmap -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/smartcardTest-all-target-headers.hmap -iquote /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/smartcardTest-project-headers.hmap -F/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/Debug -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/Debug/include -Ilibp11-0.2.8 -Ilibp11-0.2.8/doc -Ilibp11-0.2.8/examples -Ilibp11-0.2.8/m4 -Ilibp11-0.2.8/src -Ilibp11-0.2.8/doc/nonpersistent -Ilibp11-0.2.8/doc/nonpersistent/wiki.out -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/DerivedSources/x86_64 -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/DerivedSources -c /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_misc.c -o /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/p11_misc.o0#
+
+CCompileC build/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/p11_ops.o /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_ops.c normal x86_64 c com.apple.compilers.gcc.4_2
+s368735582.343690
+e368735582.479173
+r1
+xCompileC
+xbuild/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/p11_ops.o
+x/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_ops.c
+xnormal
+xx86_64
+xc
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@100"Compile /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_ops.c368735582#368735582#0(0"0(0#0#92"/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_ops.c8616267712#1868"    cd /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/smartcardTest-generated-files.hmap -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/smartcardTest-own-target-headers.hmap -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/smartcardTest-all-target-headers.hmap -iquote /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/smartcardTest-project-headers.hmap -F/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/Debug -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/Debug/include -Ilibp11-0.2.8 -Ilibp11-0.2.8/doc -Ilibp11-0.2.8/examples -Ilibp11-0.2.8/m4 -Ilibp11-0.2.8/src -Ilibp11-0.2.8/doc/nonpersistent -Ilibp11-0.2.8/doc/nonpersistent/wiki.out -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/DerivedSources/x86_64 -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/DerivedSources -c /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_ops.c -o /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/p11_ops.o0#
+
+CCompileC build/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/p11_rsa.o /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_rsa.c normal x86_64 c com.apple.compilers.gcc.4_2
+s368735582.429206
+e368735582.573686
+r1
+xCompileC
+xbuild/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/p11_rsa.o
+x/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_rsa.c
+xnormal
+xx86_64
+xc
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@100"Compile /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_rsa.c368735582#368735582#0(0"0(0#0#92"/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_rsa.c8616044672#1868"    cd /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/smartcardTest-generated-files.hmap -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/smartcardTest-own-target-headers.hmap -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/smartcardTest-all-target-headers.hmap -iquote /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/smartcardTest-project-headers.hmap -F/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/Debug -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/Debug/include -Ilibp11-0.2.8 -Ilibp11-0.2.8/doc -Ilibp11-0.2.8/examples -Ilibp11-0.2.8/m4 -Ilibp11-0.2.8/src -Ilibp11-0.2.8/doc/nonpersistent -Ilibp11-0.2.8/doc/nonpersistent/wiki.out -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/DerivedSources/x86_64 -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/DerivedSources -c /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_rsa.c -o /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/p11_rsa.o0#
+
+CCompileC build/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/p11_slot.o /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_slot.c normal x86_64 c com.apple.compilers.gcc.4_2
+s368735582.479272
+e368735582.648734
+r1
+xCompileC
+xbuild/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/p11_slot.o
+x/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_slot.c
+xnormal
+xx86_64
+xc
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@101"Compile /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_slot.c368735582#368735582#0(0"0(0#0#93"/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_slot.c8612798240#1870"    cd /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/smartcardTest-generated-files.hmap -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/smartcardTest-own-target-headers.hmap -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/smartcardTest-all-target-headers.hmap -iquote /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/smartcardTest-project-headers.hmap -F/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/Debug -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/Debug/include -Ilibp11-0.2.8 -Ilibp11-0.2.8/doc -Ilibp11-0.2.8/examples -Ilibp11-0.2.8/m4 -Ilibp11-0.2.8/src -Ilibp11-0.2.8/doc/nonpersistent -Ilibp11-0.2.8/doc/nonpersistent/wiki.out -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/DerivedSources/x86_64 -I/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/DerivedSources -c /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/libp11-0.2.8/src/p11_slot.c -o /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/p11_slot.o0#
+
+CLd /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/Debug/smartcardTest normal x86_64
+s368735582.757718
+e368735582.970980
+r1
+xLd
+x/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/Debug/smartcardTest
+xnormal
+xx86_64
+old: warning: path '/opt/local/lib/libcrypto.1.0.0.dylib' following -L not a directory
+old: warning: path '/opt/local/lib/libltdl.7.dylib' following -L not a directory
+old: warning: duplicate dylib /opt/local/lib/libcrypto.1.0.0.dylib
+lSLF07#2@96"Link /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/Debug/smartcardTest368735582#368735582#0(232"ld: warning: path '/opt/local/lib/libcrypto.1.0.0.dylib' following -L not a directoryld: warning: path '/opt/local/lib/libltdl.7.dylib' following -L not a directoryld: warning: duplicate dylib /opt/local/lib/libcrypto.1.0.0.dylib3(22@72"Path '/opt/local/lib/libcrypto.1.0.0.dylib' following -L not a directory368735582#0#86#0(6@0"368735582#0#0#0#0#0"0(22@66"Path '/opt/local/lib/libltdl.7.dylib' following -L not a directory368735582#86#80#0(6@0"368735582#0#0#0#0#0"0(22@52"Duplicate dylib /opt/local/lib/libcrypto.1.0.0.dylib368735582#166#66#0(6@0"368735582#0#0#0#0#0"0(0#0#0"8612558080#779"    cd /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/g++-4.2 -arch x86_64 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/Debug -L/opt/local/lib/libcrypto.1.0.0.dylib -L/opt/local/lib/libltdl.7.dylib -L/opt/local/lib -F/Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/Debug -filelist /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/smartcardTest.build/Debug/smartcardTest.build/Objects-normal/x86_64/smartcardTest.LinkFileList -mmacosx-version-min=10.6 -lcrypto -lltdl.7 -lcrypto.1.0.0 -o /Users/chris/Desktop/smartcard/televoton/TeleVoton/smartcardTests/build/Debug/smartcardTest0#
+

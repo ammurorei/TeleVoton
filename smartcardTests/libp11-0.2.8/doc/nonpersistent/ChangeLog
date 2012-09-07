@@ -1,0 +1,824 @@
+2011-04-15 11:52  martin
+
+	* releases/libp11-0.2.8: Release libp11-0.2.8
+
+2011-04-15 11:51  martin
+
+	* trunk/NEWS, trunk/configure.ac: Release 0.2.8 * bump soname
+	  because of added fields in r149 * update NEWS file
+
+2010-11-16 10:54  ludovic.rousseau
+
+	* trunk/examples/getrandom.c: Display the number of available slots
+
+2010-07-23 19:59  martin
+
+	* trunk/src/libp11.pc.in: Add openssl libcrypto to pkg-config
+	  private libs list to make sure that apps which link against
+	  static libp11 have -lcrypto on linker command line. Patch by
+	  Kalev Lember
+	* trunk/examples/Makefile: Fix building examples on newest Fedora.
+	  Patch by Kalev Lember
+
+2010-07-23 07:54  martin
+
+	* trunk/src/libp11.h, trunk/src/p11_slot.c: Add missing token
+	  flags into libp11 structure. Patch by Kalev Lember
+
+2010-04-01 14:30  martin
+
+	* trunk/src/p11_slot.c: Fix ticket #137: check that private data
+	  is not NULL
+
+2009-10-20 12:19  aj
+
+	* trunk/NEWS, trunk/configure.ac: Next release will be 0.2.8,
+	  trunk is "-svn" preview.
+	* trunk/NEWS: Update News too.
+
+2009-10-20 12:18  aj
+
+	* trunk/configure.ac: Create new release 0.2.8
+
+2009-10-20 12:16  aj
+
+	* trunk/NEWS, trunk/src/p11_load.c: make libp11 swallow
+	  CKR_CRYPTOKI_ALREADY_INITIALIZED if returned from
+	  C_Initialize(). It's an informational message and should not be
+	  bubbled up to the caller. By Daniel Smith.
+
+2009-07-22 10:22  aj
+
+	* trunk/NEWS, trunk/configure.ac: trunk is now post 0.2.6
+
+2009-07-22 10:20  aj
+
+	* trunk/NEWS, trunk/configure.ac: prepare release 0.2.6.
+
+2009-06-29 06:26  aj
+
+	* trunk/Makefile.am: Kalev Lember: add Makefile.mak and
+	  winconfig.h for building with MSVC.
+
+2009-06-28 07:29  aj
+
+	* trunk/src/libp11.exports: export the new function too.
+
+2009-06-15 19:52  aj
+
+	* trunk/configure.ac: we branched for 0.2.5, new development gets
+	  -svn suffix.
+
+2009-06-15 19:51  aj
+
+	* trunk/NEWS, trunk/configure.ac, trunk/src/libp11.h,
+	  trunk/src/p11_slot.c: add new function to export slot id.
+
+2009-01-19 13:42  alonbl
+
+	* trunk/configure.ac: Add PACKAGE_SUFFIX
+
+2009-01-01 21:11  alonbl
+
+	* trunk/doc/Makefile.am, trunk/doc/nonpersistent/Makefile.am: Fix
+	  doc build issues 1. VPATH issue. 2. Parallel build issue,
+	  suggested by Ludovic Rousseau.
+
+2008-10-27 19:19  alonbl
+
+	* trunk/configure.ac: mingw32->mingw*
+
+2008-09-20 15:46  alonbl
+
+	* trunk/configure.ac: Handle svn checkout detection correctly when
+	  srcdir is different
+
+2008-09-19 06:53  alonbl
+
+	* trunk/doc/nonpersistent/Makefile.am: Don't remove external files
+	  on distclean
+
+2008-08-20 14:51  aj
+
+	* trunk/src/libp11.h, trunk/src/p11_cert.c, trunk/src/p11_key.c,
+	  trunk/src/pkcs11.h: Switch from using int for size arguments to
+	  size_t. This change breaks ABI on 64bit plattforms (we increased
+	  the library minor/major numbers in the last commit already).
+	  patch submitted by Stanislav Brabec.
+
+2008-08-20 06:00  aj
+
+	* trunk/configure.ac: Stanislav Brabec: As previous patches
+	  changed ABI (at least on x86_64), increasing of soname is
+	  required. next patch will break ABI too, one soname increase for
+	  both together.
+
+2008-08-20 05:48  aj
+
+	* trunk/src/libp11.h, trunk/src/p11_load.c: Stanislav Brabec: As
+	  documentation says, PKCS11_CTX_init_args() returns "none". In
+	  the implementation it really returns none (i. e. it is void),
+	  but in both declaration and header it is declared as "void*" (i.
+	  e. non-void). I suspect that it was really intended as void.
+
+2008-08-14 10:33  alonbl
+
+	* trunk/src/p11_load.c: Remove gcc specifics
+
+2008-07-31 14:41  aj
+
+	* trunk/NEWS, trunk/src/p11_load.c: fix segfault in new code.
+
+2008-07-31 12:44  aj
+
+	* trunk/doc/nonpersistent/export-wiki.sh: update export script.
+
+2008-07-31 12:00  aj
+
+	* trunk/NEWS: Update news file.
+
+2008-07-30 19:37  alonbl
+
+	* trunk/src/libp11.exports: Export missing symbol
+
+2008-07-30 14:07  alonbl
+
+	* trunk/NEWS: Update NEWS
+
+2008-07-30 12:54  aj
+
+	* trunk/NEWS, trunk/src/p11_ops.c: Arnaud Ebalard: implement
+	  PKCS11_private_encrypt() and make PKCS11_sign() use it. The
+	  overall behaviour of PKCS11_sign() should not be modified.
+
+2008-07-30 12:15  aj
+
+	* trunk/configure.ac: Ah, fix these number for libtool.
+
+2008-07-30 12:14  aj
+
+	* trunk/configure.ac: We added a function, so we need to increase
+	  the minor number.
+
+2008-07-30 12:12  aj
+
+	* trunk/NEWS: Update news too.
+
+2008-07-30 12:11  aj
+
+	* trunk/src/libp11-int.h, trunk/src/libp11.h,
+	  trunk/src/p11_load.c: David Smith: While working on adding
+	  PKCS#11 support to Gnome's Network Manager project, it was found
+	  that being able to specify the pReserved member of
+	  CK_C_INITIALIZE_ARGS_PTR to C_Initialize is probably necessary
+	  in wpasupplicant, an engine-pkcs11 consumer. This support did
+	  not exist in libp11 and engine-pkcs11, so I've attached a patch
+	  that adds a new function in libp11, PKCS11_CTX_init_args, and a
+	  new engine command, CMD_INIT_ARGS.
+
+2008-06-11 10:12  alonbl
+
+	* trunk/Makefile.am, trunk/configure.ac, trunk/m4: Detect
+	  libtool-1 or libtool-2 at runtime
+
+2008-06-09 08:36  alonbl
+
+	* trunk/Makefile.am: More aclocal->m4
+
+2008-06-05 20:23  alonbl
+
+	* trunk/Makefile.am, trunk/configure.ac: Some more cleanups
+
+2008-06-05 19:49  alonbl
+
+	* trunk/configure.ac: Prepare for libtool-2
+
+2008-05-14 18:37  alonbl
+
+	* trunk/configure.ac: Fixup configure help strings
+
+2008-04-29 12:02  alonbl
+
+	* trunk/src/versioninfo.rc.in: Include winresrc.h
+
+2008-04-18 20:38  alonbl
+
+	* trunk/bootstrap: Add --force to autoreconf
+
+2008-04-11 12:53  alonbl
+
+	* trunk/src/Makefile.am: More fixups to maintainer-clean
+
+2008-04-10 16:28  alonbl
+
+	* trunk/Makefile.mak, trunk/src/Makefile.mak: Fixup MSVC resource
+	  build. By Douglas E. Engert
+
+2008-04-10 12:24  alonbl
+
+	* trunk/src/versioninfo.rc.in: afxres.h is not needed
+
+2008-04-08 18:47  alonbl
+
+	* trunk/src/Makefile.am, trunk/src/versioninfo.rc.in: Distribute
+	  files for MSCV
+
+2008-04-08 17:42  alonbl
+
+	* trunk/Makefile.mak, trunk/src/Makefile.mak,
+	  trunk/src/makedef.pl, trunk/winconfig.h: libp11 MSVC fixups Here
+	  they are. This email has libp11 changes. The next email will
+	  have the engine_pkcs11. The changes are inline as you asked.
+	  Watch out for wrapped lines and spacing. (I attached the changes
+	  too, just in case.) added top Makefile.mak to handle winconfig.h
+	  updated src/Makefile.mak to include config.h and use
+	  libp11.exports take care of manifest. remove makedef.pl added
+	  winconfig.h with nothing in it for now. By Douglas E. Engert
+
+2008-04-04 22:16  alonbl
+
+	* trunk, trunk/Makefile.am, trunk/aclocal, trunk/configure.ac,
+	  trunk/doc, trunk/doc/Makefile.am, trunk/doc/changelog.sh,
+	  trunk/doc/doxygen-footer.html, trunk/doc/doxygen.conf.in,
+	  trunk/doc/export-wiki.sh, trunk/doc/export-wiki.xsl,
+	  trunk/doc/generate-api.sh, trunk/doc/nonpersistent,
+	  trunk/doc/nonpersistent/Makefile.am,
+	  trunk/doc/nonpersistent/export-wiki.sh,
+	  trunk/doc/nonpersistent/export-wiki.xsl,
+	  trunk/doc/nonpersistent/svn2cl.xsl, trunk/doc/opensc-logo.gif,
+	  trunk/doc/svn2cl.xsl, trunk/examples, trunk/src,
+	  trunk/src/Makefile.am, trunk/src/libp11.exports,
+	  trunk/src/libpkcs11.c, trunk/src/p11_attr.c,
+	  trunk/src/p11_cert.c, trunk/src/p11_err.c, trunk/src/p11_key.c,
+	  trunk/src/p11_load.c, trunk/src/p11_misc.c, trunk/src/p11_ops.c,
+	  trunk/src/p11_rsa.c, trunk/src/p11_slot.c,
+	  trunk/src/versioninfo.rc.in, trunk/svnignore: New build system
+	  Merge new build system: 1. Support mingw. 2. Sync with latest
+	  opensc. 3. Remove api documents from distribution. merge -r
+	  127:141
+	  https://www.opensc-project.org/svn/libp11/branches/alonbl/mingw
+	  _M . M configure.ac _M doc D doc/changelog.sh M
+	  doc/doxygen.conf.in D doc/export-wiki.xsl M doc/Makefile.am A
+	  doc/opensc-logo.gif D doc/generate-api.sh D doc/export-wiki.sh
+	  AM doc/nonpersistent A doc/nonpersistent/export-wiki.xsl A
+	  doc/nonpersistent/Makefile.am A doc/nonpersistent/export-wiki.sh
+	  A doc/nonpersistent/svn2cl.xsl D doc/svn2cl.xsl A
+	  doc/doxygen-footer.html _M src M src/p11_load.c M src/p11_slot.c
+	  M src/p11_rsa.c M src/p11_err.c M src/p11_key.c A
+	  src/libp11.exports M src/p11_misc.c M src/p11_cert.c M
+	  src/p11_ops.c M src/Makefile.am A src/versioninfo.rc.in M
+	  src/libpkcs11.c M src/p11_attr.c M Makefile.am A svnignore D
+	  aclocal _M examples
+
+2008-03-09 15:39  alonbl
+
+	* trunk/src/libp11.h: doxygen cleanups
+
+2007-07-11 14:48  aj
+
+	* trunk/configure.ac: trunk is now post 0.2.3 release.
+
+2007-07-11 14:47  aj
+
+	* trunk/NEWS: testing needed more time.
+
+2007-07-10 13:04  aj
+
+	* trunk/NEWS, trunk/doc/export-wiki.sh: update wiki export scripts.
+
+2007-07-09 16:14  aj
+
+	* trunk/src/Makefile.mak: pkcs11.h is now in the current directory.
+
+2007-07-04 06:40  aj
+
+	* trunk/Makefile.am, trunk/NEWS: add NEWS and COPYING to
+	  distribution. target saturday for release.
+
+2007-07-03 14:23  aj
+
+	* trunk/src/p11_slot.c: "frain" reported: libp11 fails at
+	  enumerating tokens if a PKCS#11 library returns
+	  CKR_TOKEN_NOT_RECOGNIZED on a C_GetTokenInfo call. The attached
+	  patch causes libp11 to treat slots containing unrecognized
+	  tokens as empty slots during token enumeration, letting the
+	  enumeration succeed even if unrecognized tokens are present.
+	  applied his patch.
+
+2007-07-03 14:17  aj
+
+	* trunk/NEWS, trunk/configure.ac: prepare for new release.
+
+2007-07-03 14:14  aj
+
+	* trunk/src/pkcs11.h: update pkcs11.h header file from scute.
+
+2007-06-29 14:16  aj
+
+	* trunk/src/p11_cert.c: fix another warning.
+
+2007-06-29 14:14  aj
+
+	* trunk/src/libp11.h: fix header file again.
+
+2007-06-29 14:02  aj
+
+	* trunk/src/p11_rsa.c, trunk/src/p11_slot.c: fix more compiler
+	  warnings.
+	* trunk/src/libp11.h: fix header file.
+
+2007-06-29 13:41  aj
+
+	* trunk/src/p11_key.c: mark more internal functions as static.
+
+2007-06-29 13:40  aj
+
+	* trunk/src/libp11.h, trunk/src/p11_cert.c: kill warnings / make
+	  functions static.
+
+2007-06-29 06:22  aj
+
+	* trunk/src/p11_slot.c: Risto Laanoja: Make
+	  ..USER_ALREADY_LOGGED_IN nonfatal. (There is long comment in
+	  engine_pkcs11.c about this topic). I think it is correct way to
+	  deal with multiple logins and possibility of token replacement.
+
+2007-06-29 06:21  aj
+
+	* trunk/src/p11_ops.c: Risto Laanoja: possible free(NULL) on
+	  specific case
+
+2007-01-19 14:46  ludovic.rousseau
+
+	* trunk/src/libp11.h: add a Doxygen comment for
+	  PKCS11_generate_key() bits argument
+
+2006-12-19 21:00  aj
+
+	* trunk/aclocal/pkg.m4: use utf-8/ascii.
+
+2006-12-18 07:40  aj
+
+	* trunk/src/libp11-int.h, trunk/src/pkcs11.h: update to latest
+	  pkcs11.h revision.
+
+2006-12-10 22:29  aj
+
+	* trunk/src/pkcs11.h: add fixes by Nils.
+
+2006-12-10 07:57  aj
+
+	* trunk/src/pkcs11.h: update to latest pkcs11.h from Markus.
+
+2006-12-09 15:42  aj
+
+	* trunk/src/pkcs11.h: pkcs11.h with updates from Alon.
+
+2006-11-30 08:12  aj
+
+	* trunk/Makefile.am, trunk/configure.ac, trunk/rsaref,
+	  trunk/src/Makefile.am, trunk/src/libp11-int.h,
+	  trunk/src/libpkcs11.c, trunk/src/pkcs11.h: replace rsa header
+	  files with rewrite.
+
+2006-11-17 11:10  aj
+
+	* trunk/src/libp11-int.h, trunk/src/libp11.h,
+	  trunk/src/p11_attr.c, trunk/src/p11_cert.c, trunk/src/p11_key.c:
+	  add code to store private key by Alexander Starostin
+	  <assur@esc.ru>
+
+2006-11-17 11:09  aj
+
+	* trunk/src/p11_slot.c: remove unused variables.
+
+2006-07-19 07:39  aj
+
+	* trunk/src/p11_slot.c: fix bug causing a core dump.
+
+2006-05-30 20:55  aj
+
+	* trunk/configure.ac: trunk is for developing past 0.2.2
+
+2006-05-23 05:57  aj
+
+	* trunk/src/p11_ops.c: RSA_PKCS1_PADDING is a constant to
+	  differentiate it from other padding types. where length is
+	  compared we meant to use RSA_PKCS1_PADDING_SIZE. Bug found,
+	  fixed and reported by Tomoko Fukuzawa.
+
+2006-05-20 16:07  aj
+
+	* trunk/src/Makefile.mak: fix windows build.
+
+2006-04-18 15:17  aj
+
+	* trunk/src/p11_slot.c: dynamically allocate slots, as suggested
+	  by Thomas Irlet
+
+2006-03-16 21:36  aj
+
+	* trunk/configure.ac: simply the revision, drop the m4 code. it
+	  didn't turn out the way I wanted it (does not contain the
+	  _repository_/_branch_ revision).
+
+2006-01-22 21:07  aj
+
+	* trunk/doc/README, trunk/doc/export-wiki.sh: move to
+	  opensc-project.org till opensc.org dns is back.
+
+2005-12-26 22:39  aj
+
+	* trunk/configure.ac: enable keywords.
+
+2005-12-26 22:25  aj
+
+	* trunk/configure.ac: experiment with svn version number.
+
+2005-12-01 19:45  aj
+
+	* trunk/src/p11_key.c: kill some dead code.
+
+2005-11-08 15:20  jps
+
+	* trunk/examples/getrandom.c: avoid a compilation warning
+
+2005-11-02 08:50  ludovic.rousseau
+
+	* trunk/doc/changelog.sh: set the executable bit
+
+2005-11-02 08:46  ludovic.rousseau
+
+	* trunk/src/libp11.h: use @retval instead of @return
+
+2005-11-01 23:34  aj
+
+	* trunk/configure.ac, trunk/src/libp11.h, trunk/src/p11_rsa.c:
+	  export one additional function.
+
+2005-10-30 18:56  aj
+
+	* trunk/configure.ac: functions added only, i.e. still ABI
+	  compatible.
+
+2005-10-30 15:27  aj
+
+	* trunk/src/libp11.h, trunk/src/p11_cert.c: add function to store
+	  certificates.
+
+2005-10-30 13:45  aj
+
+	* trunk/doc/changelog.sh, trunk/doc/svn2cl.xsl: add files to
+	  generate ChangeLog.
+
+2005-10-30 13:42  aj
+
+	* trunk/doc/Makefile.am: add ChangeLog file via svn2cl.
+
+2005-10-30 11:40  aj
+
+	* trunk/src/libp11.h, trunk/src/p11_attr.c, trunk/src/p11_key.c,
+	  trunk/src/p11_ops.c, trunk/src/p11_rsa.c, trunk/src/p11_slot.c:
+	  patch by Nils: fix memory leaks, improve documentation.
+
+2005-10-22 14:04  nils
+
+	* trunk/examples/auth.c: remove warnings, fix memory leaks and use
+	  only 20 bytes as a sha-1 hash
+
+2005-10-22 14:01  nils
+
+	* trunk/src/p11_key.c: fix memory leak, indent
+
+2005-10-22 12:11  nils
+
+	* trunk/src/p11_cert.c, trunk/src/p11_key.c: fix memory leak: free
+	  _private data as well when destroying a cert/key object
+
+2005-10-22 12:07  nils
+
+	* trunk/examples/decrypt.c: we need to free the ex_data as well
+
+2005-10-21 22:47  nils
+
+	* trunk/examples/decrypt.c: fix some memory leaks
+
+2005-10-21 22:05  nils
+
+	* trunk/examples/decrypt.c: make it work (at least for me ;-) +
+	  some cleanup
+
+2005-10-20 14:11  aj
+
+	* trunk/examples/Makefile, trunk/examples/decrypt.c: add an
+	  example for decryption. however it doesn't work, will ask nils
+	  for advice how to get the openssl part right.
+
+2005-10-18 13:35  ludovic.rousseau
+
+	* trunk/examples/auth.c: nslots, ncerts, siglen are _unsigned_ int
+	  (avoids 3 compiler warnings)
+
+2005-10-18 13:33  ludovic.rousseau
+
+	* trunk/examples/auth.c: add #include <string.h> since we use
+	  strlen() and memse()
+
+2005-10-13 15:14  aj
+
+	* trunk/examples/Makefile, trunk/examples/auth.c,
+	  trunk/examples/getrandom.c: add real auth example. add getrandom
+	  example.
+
+2005-10-05 13:45  ludovic.rousseau
+
+	* trunk/src/libp11.h: add some Doxygen documentation
+
+2005-10-05 13:04  ludovic.rousseau
+
+	* trunk/doc/generate-api.sh: make generate-api.sh executable
+
+2005-09-23 16:35  aj
+
+	* trunk/aclocal/Makefile.am: add m4 packages to tar.gz
+
+2005-09-20 13:01  aj
+
+	* trunk/src/makedef.pl: filter functions to be listed in windows
+	  *.def file.
+
+2005-09-20 07:32  aj
+
+	* trunk/aclocal/libtool.m4: adding libtool.m4 was a bad idea and
+	  causes problems. undo.
+
+2005-09-19 13:44  aj
+
+	* trunk/configure.ac: incompatible change: one parameter marked
+	  const.
+
+2005-09-19 13:43  aj
+
+	* trunk/src/Makefile.mak, trunk/src/libp11-int.h,
+	  trunk/src/libp11.h, trunk/src/p11_key.c: fixes to make it
+	  compile on windows.
+
+2005-09-14 09:48  ludovic.rousseau
+
+	* trunk/doc/export-wiki.sh: use -nv instead of --non-verbose since
+	  wget 1.10 now uses --no-verbose instead. Grr!
+
+2005-09-08 17:21  aj
+
+	* trunk/src/Makefile.am: we use libtool for linking, so it can
+	  calucalte the dependencies using LTLIBLTDL better. Thanks to
+	  Ralf Wildenhues.
+
+2005-09-08 17:06  aj
+
+	* trunk/configure.ac: fix AC_MSG_ERROR usage. thanks to Ralf
+	  Wildenhues.
+
+2005-09-08 17:02  aj
+
+	* trunk/src/Makefile.am: AC_SUBSTed variables are better used with
+	  $(..). Thanks to Ralf Wildenhues.
+
+2005-09-08 16:52  aj
+
+	* trunk/Makefile.am, trunk/bootstrap: aclocal -I aclocal/ (as
+	  suggested by Ralf Wildenhues)
+
+2005-09-05 21:18  aj
+
+	* trunk/configure.ac, trunk/src/Makefile.am: improved libltdl
+	  detection. fix finding OPENSSL.
+
+2005-09-05 21:17  aj
+
+	* trunk/aclocal/lib-ld.m4, trunk/aclocal/lib-link.m4,
+	  trunk/aclocal/lib-prefix.m4, trunk/aclocal/libtool.m4,
+	  trunk/aclocal/pkg.m4: add m4 macro packages used by libp11.
+
+2005-09-02 16:54  aj
+
+	* trunk/Makefile.am, trunk/doc/Makefile.am: another try to get
+	  "make dist" documentation generateion right.
+
+2005-09-02 09:52  aj
+
+	* trunk/Makefile.am: "doc" does not work well, it is the
+	  subdirectory name.
+
+2005-09-02 09:30  aj
+
+	* trunk/Makefile.am: dist-hook: is too late, need to generate the
+	  documentation before automake "make dist" copied files around.
+
+2005-09-01 21:22  aj
+
+	* trunk/src/p11_slot.c: oops, made it internal. fix name again.
+
+2005-09-01 21:21  aj
+
+	* trunk/src/p11_slot.c: oops, missed another one.
+
+2005-09-01 21:20  aj
+
+	* trunk/src/p11_slot.c: fix renaming destroy to release.
+
+2005-09-01 17:04  aj
+
+	* trunk/doc/doxygen.conf.in: fix path to header files.
+
+2005-09-01 15:54  aj
+
+	* trunk/doc/doxygen.conf.in, trunk/doc/generate-api.sh: dd
+	  doxygent config file and script to generate doxygen
+	  documentation.
+
+2005-09-01 15:47  aj
+
+	* trunk/Makefile.am, trunk/configure.ac, trunk/doc/Makefile.am:
+	  add doxygen config file and api documentation.
+
+2005-09-01 15:46  aj
+
+	* trunk/examples/auth.c: update example to match latest library
+	  changes.
+	* trunk/src/libp11-int.h, trunk/src/libp11.h,
+	  trunk/src/p11_slot.c: rename the destroy_slots and
+	  destroy_all_slots to "release" ... functions. make release_slot
+	  internal again. free slots aray in release_all_slots.
+
+2005-09-01 14:05  aj
+
+	* trunk/Makefile.am, trunk/bootstrap: do not include libltdl,
+	  require it instead. create documentation on "make dist".
+	* trunk/examples/auth.c: update example to fit libp11 changes.
+
+2005-09-01 14:04  aj
+
+	* trunk/src/libp11-int.h, trunk/src/libp11.h,
+	  trunk/src/p11_load.c, trunk/src/p11_slot.c: remove nslots and
+	  slots from PKCS11_CTX. ask user to free slots.
+
+2005-09-01 14:03  aj
+
+	* trunk/doc/MailingLists.html, trunk/doc/Makefile.am,
+	  trunk/doc/OperatingSystems.html, trunk/doc/QuickStart.html,
+	  trunk/doc/ResourcesLinks.html, trunk/doc/export-wiki.sh,
+	  trunk/doc/index.html, trunk/doc/trac.css: remove documentation
+	  from svn. update build mechanism.
+
+2005-08-31 06:50  ludovic.rousseau
+
+	* trunk/examples/auth.c: improve code: - reindent - display slot
+	  information - display error messages
+
+2005-08-30 15:52  aj
+
+	* trunk/Makefile.am, trunk/examples, trunk/examples/Makefile,
+	  trunk/examples/README, trunk/examples/auth.c: add examples/
+	  subdirectory.
+
+2005-08-30 14:12  aj
+
+	* trunk/configure.ac: snapshot script currently works only with
+	  "WIP", sorry.
+
+2005-08-29 08:48  ludovic.rousseau
+
+	* trunk/bootstrap: remove --ltdl argument from libtoolize
+
+2005-08-29 08:43  ludovic.rousseau
+
+	* trunk/src/libpkcs11.c: C_UnloadModule(): call lt_dlexit() after
+	  lt_dlclose()
+
+2005-08-29 08:41  ludovic.rousseau
+
+	* trunk/rsaref/cryptoki.h: pack the structures only on Windows
+
+2005-08-29 07:32  ludovic.rousseau
+
+	* trunk/configure.ac: check for ltdl.h using AC_CHECK_HEADERS
+
+2005-08-29 07:30  ludovic.rousseau
+
+	* trunk/src/Makefile.am: do not use @LTDLINCL@ and @LIBLTDL@
+	  anymore
+
+2005-08-29 07:23  ludovic.rousseau
+
+	* trunk/Makefile.am: remove libltdl from SUBDIRS remove
+	  maintainer-clean-local rule (was "rm -rf libltdl")
+
+2005-08-29 07:22  ludovic.rousseau
+
+	* trunk/configure.ac: do not use AC_LIBLTDL_INSTALLABLE but check
+	  for libltdl instead
+
+2005-08-29 07:20  ludovic.rousseau
+
+	* trunk/src/libpkcs11.c: struct sc_pkcs11_module: handle field is
+	  lt_dlhandle not (lt_dlhandle *) since lt_dlopen returns a
+	  lt_dlhandle
+
+2005-08-29 07:18  ludovic.rousseau
+
+	* trunk/src/libpkcs11.c: #include "libp11-int.h" to get/check the
+	  prototypes of the defined functions
+
+2005-08-28 20:55  aj
+
+	* trunk/src/libpkcs11.c: fix compiling libpkcs11.c file.
+
+2005-08-28 20:53  aj
+
+	* trunk/src/Makefile.am: fix makefile to compile all files.
+
+2005-08-25 21:37  aj
+
+	* trunk/rsaref/README, trunk/rsaref/cryptoki.h,
+	  trunk/rsaref/pkcs11.h, trunk/rsaref/pkcs11f.h,
+	  trunk/rsaref/pkcs11t.h: convert line endings.
+
+2005-08-25 20:30  ludovic.rousseau
+
+	* trunk/configure.ac: use a 3 digits version number (instead of 2)
+	  and start with 0.1.0
+
+2005-08-25 20:24  ludovic.rousseau
+
+	* trunk/configure.ac: add the URL documenting the use of ltdl to
+	  help understand this black magic
+
+2005-08-25 20:18  ludovic.rousseau
+
+	* trunk/doc/export-wiki.sh: use "wget --no-verbose" to NOT get
+	  many debug information and the progress bar
+
+2005-08-25 20:12  aj
+
+	* trunk/doc/export-wiki.sh: chmdoe to 755.
+
+2005-08-25 20:02  aj
+
+	* trunk/src/libpkcs11.c: migrate to ltdl.
+
+2005-08-25 13:02  ludovic.rousseau
+
+	* trunk/src/libp11-int.h, trunk/src/libp11.h: move
+	  PKCS11_open_session() from libp11-int.h to libp11.h
+
+2005-08-24 22:48  aj
+
+	* trunk/src/Makefile.am: oops, top_srcdir of course.
+
+2005-08-24 22:42  aj
+
+	* trunk/src/libp11.h, trunk/src/p11_slot.c: export serial number,
+	  patch by Douglas de Oliveira Mendes
+
+2005-08-24 22:40  aj
+
+	* trunk/src/Makefile.am: fix building out of tree.
+
+2005-08-24 22:34  aj
+
+	* trunk/Makefile.am: we only have a Makefile.mak in src/ currently.
+
+2005-08-24 22:29  aj
+
+	* trunk/Makefile.am: we don't need those files.
+
+2005-08-24 22:09  aj
+
+	* trunk/rsaref/README: document changes in cryptoki.h
+
+2005-08-24 21:55  aj
+
+	* trunk/COPYING, trunk/Makefile.am, trunk/aclocal,
+	  trunk/aclocal/Makefile.am, trunk/bootstrap, trunk/configure.ac,
+	  trunk/doc, trunk/doc/MailingLists.html, trunk/doc/Makefile.am,
+	  trunk/doc/OperatingSystems.html, trunk/doc/QuickStart.html,
+	  trunk/doc/README, trunk/doc/ResourcesLinks.html,
+	  trunk/doc/export-wiki.sh, trunk/doc/export-wiki.xsl,
+	  trunk/doc/index.html, trunk/doc/trac.css, trunk/rsaref,
+	  trunk/rsaref/Makefile.am, trunk/rsaref/README,
+	  trunk/rsaref/cryptoki.h, trunk/rsaref/pkcs11.h,
+	  trunk/rsaref/pkcs11f.h, trunk/rsaref/pkcs11t.h, trunk/src,
+	  trunk/src/Makefile.am, trunk/src/Makefile.mak,
+	  trunk/src/libp11-int.h, trunk/src/libp11.h,
+	  trunk/src/libp11.pc.in, trunk/src/libpkcs11.c,
+	  trunk/src/makedef.pl, trunk/src/p11_attr.c,
+	  trunk/src/p11_cert.c, trunk/src/p11_err.c, trunk/src/p11_key.c,
+	  trunk/src/p11_load.c, trunk/src/p11_misc.c, trunk/src/p11_ops.c,
+	  trunk/src/p11_rsa.c, trunk/src/p11_slot.c: initial checkin of
+	  libp11.
+
+2005-08-24 19:31  aj
+
+	* branches, releases, trunk: add minimal structure
+

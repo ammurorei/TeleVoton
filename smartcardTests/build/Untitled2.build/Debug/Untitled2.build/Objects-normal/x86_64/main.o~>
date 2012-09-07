@@ -1,0 +1,9 @@
+/Users/chris/Desktop/smartcard/Untitled2/main.cpp: In function 'int main(int, char* const*)':
+/Users/chris/Desktop/smartcard/Untitled2/main.cpp:25: warning: unused variable 'authkey'
+/Users/chris/Desktop/smartcard/Untitled2/main.cpp:27: warning: unused variable 'pubkey'
+/Users/chris/Desktop/smartcard/Untitled2/main.cpp:30: warning: unused variable 'random'
+/Users/chris/Desktop/smartcard/Untitled2/main.cpp:30: warning: unused variable 'signature'
+/Users/chris/Desktop/smartcard/Untitled2/main.cpp:32: warning: unused variable 'password'
+/Users/chris/Desktop/smartcard/Untitled2/main.cpp:33: warning: unused variable 'fd'
+/Users/chris/Desktop/smartcard/Untitled2/main.cpp:34: warning: unused variable 'siglen'
+i686-apple-darwin10-gcc-4.2.1: -lcrypto: linker input file unused because linking not done
