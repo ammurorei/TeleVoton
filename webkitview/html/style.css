@@ -2,18 +2,34 @@ body {
 	font-family: Monaco;
 	font-size: 14pt;
 	margin: 0;
+	color:#FFFC9D;
 }
 .wrapper {
 	position: relative;
 	width:640px;
 	height:480px;
 	float:left;
+	background-color:  #000033;
 }
+
 .header {
 	width:640px;
 	height:235px;
 	float:left;
 }
+.header_wimg {
+    float: left;
+    height: 235px;
+    margin: 120px 0 0;
+    width: 280px;
+}
+.header_wimg p {
+	margin: 0 0 80px;
+}
+.header_wimg p.receipt {
+    margin-top: 60px;
+}
+
 .heading {
 	padding: 40px;
 }
@@ -42,4 +58,15 @@ body {
 .full {
 	width: 100%;
 	height:100%;
+}
+img {
+    float: left;
+    margin: 120px 60px 80px;
+}
+input.pin {
+    background-color: #000033;
+    border: 0 none;
+    color: #FFFC9D;
+    font-family: monaco;
+    font-size: 14px;
 }
