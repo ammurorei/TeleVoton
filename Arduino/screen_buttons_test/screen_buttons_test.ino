@@ -1,24 +1,24 @@
 /*
   DigitalReadSerial
- Reads a digital input on pin 2, prints the result to the serial monitor
-
+ Reads a digital input on pin 2, prints the result to the serial monitor 
+ 
  This example code is in the public domain.
  */
-
+ 
 char values[24] = {
-'C', //enter
+'C', //C
 '3', // 3
 '2', // 2
 '1', // 1
-'D',
-'E',
+'D',//D
+'E', //E
 '0', // 0
-'F',
-'B', //cleR
+'F',//F
+'B', //B
 '6', // 6
 '5', // 5
 '4', // 4
-'A', //cancel
+'A', //A,cancel
 '9',  // 9
 '8',  // 8
 '7',  // 7
@@ -36,35 +36,45 @@ int keyNumber = 0;
 int lastKey = 0;
 
 void setup() {
-
+  
   Serial.begin(9600);
 
-  for(int i = 4; i <= 11; i++) {
+  for(int i = 2; i <= 5; i++) {
     pinMode(i, INPUT);//INPUT_PULLUP
     digitalWrite(i, HIGH);
   }
-  for(int i = 22; i <= 29; i++) {
+   for(int i = 8; i <= 11; i++) {
     pinMode(i, INPUT);//INPUT_PULLUP
     digitalWrite(i, HIGH);
   }
-  pinMode(12, OUTPUT);
-  pinMode(13, OUTPUT);
-  digitalWrite(12, HIGH);
-  digitalWrite(13, HIGH);
-
+  for(int i = 22; i <= 36; i+=2) {
+     Serial.print("Setting ");
+     Serial.println(i);
+     pinMode(i, INPUT);//INPUT_PULLUP
+    digitalWrite(i, HIGH);
+  }
+  pinMode(38, OUTPUT);
+  pinMode(40, OUTPUT);
+  digitalWrite(38, HIGH); 
+  digitalWrite(40, HIGH);
+  pinMode(6, OUTPUT);
+  pinMode(12, OUTPUT); 
+  digitalWrite(6, LOW);
+  digitalWrite(12, LOW);  
+  
 }
 
 void loop() {
 
-  digitalWrite(12, LOW);
-
+  digitalWrite(38, LOW); 
+  
   keyNumber = - 1;
-
-  for(int i = 4; i <= 11; i++) {
-    if (digitalRead(i) == LOW) {
+  
+  for(int i = 0; i <= 7; i++) {
+    if (digitalRead(22+(i*2)) == LOW) {
        // Key pressed
-       keyNumber = i - 4;
-
+       keyNumber = i;
+       
        /*
        Serial.print("Row ");
        Serial.print(12);
@@ -73,35 +83,45 @@ void loop() {
        */
     }
   }
-  digitalWrite(12, HIGH);
+  digitalWrite(38, HIGH);  
 
-  digitalWrite(13, LOW);
-  for(int i = 4; i <= 11; i++) {
-    if (digitalRead(i) == LOW) {
+  digitalWrite(40, LOW); 
+  for(int i = 0; i <= 7; i++) {
+    if (digitalRead(22+(i*2)) == LOW) {
        // Key pressed
-       keyNumber = i - 4 + 8;
+       keyNumber = 8+i;
        /*
        Serial.print("Row ");
        Serial.print(13);
        Serial.print("Col ");
        Serial.println(i);
-       */
+       */       
     }
   }
-  digitalWrite(13, HIGH);
-
-  for(int i = 22; i <= 29; i++) {
-    if (digitalRead(i) == LOW) {
+  digitalWrite(40, HIGH);  
+  
+  for(int i = 0; i <= 3; i+=1) {
+    if (digitalRead(2+i) == LOW) {
        // Key pressed
-       keyNumber = i-6;
+       keyNumber = 16+i;  
     }
   }
-
+  
+   for(int i = 0; i <= 3; i+=1) {
+    if (digitalRead(8+i) == LOW) {
+       // Key pressed
+       keyNumber = 20+i;  
+    }
+  }
+ 
   if (keyNumber != lastKey && keyNumber != -1) {
        Serial.println(values[keyNumber]);
   }
 
   lastKey = keyNumber;
-
-
+  
+  
 }
+
+
+
