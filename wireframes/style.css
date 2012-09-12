@@ -1,0 +1,37 @@
+body {
+	font-family: Monaco;
+	font-size: 14pt;
+	margin: 0;
+}
+.wrapper {
+	width:640px;
+	height:480px;
+	float:left;
+}
+.header {
+	width:640px;
+	height:235px;
+	float:left;
+}
+.heading {
+	padding: 40px;
+}
+.main {
+	width:320px;
+	height:245px;
+}
+.center {
+
+	text-align: center;
+}
+.input-button {
+	clear:both;
+	height: 20px;
+	margin-bottom: 65px;
+}
+.left {
+	float:left;
+}
+.right {
+	float:right;
+}
