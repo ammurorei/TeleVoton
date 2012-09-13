@@ -1,1 +1,6 @@
-*.DS_Store
+.DS_Store
+/webkitview-build-desktop-Qt_4_8_2_in_PATH__System__Debug/*
+webkitview/webkitview.pro.user
+/smartcardTests/smartcardTest.xcodeproj/project.xcworkspace/*
+/smartcardTests/smartcardTest.xcodeproj/xcuserdata/*
+/django/*

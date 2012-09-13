@@ -1,5 +1,5 @@
 body {
-	font-family: Monaco;
+	font-family: "Ubuntu Mono";
 	font-size: 14pt;
 	margin: 0;
 	color:#FFFC9D;
@@ -9,7 +9,7 @@ body {
 	width:640px;
 	height:480px;
 	float:left;
-	background-color:  #000033;
+	background-color: #000033;
 }
 
 .header {

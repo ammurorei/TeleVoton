@@ -1,6 +1,6 @@
 body {
-	font-family: Monaco;
-	font-size: 14pt;
+	font-family: "Ubuntu Mono";
+	font-size: 16pt;
 	margin: 0;
 	color:#FFFC9D;
 }
@@ -23,6 +23,9 @@ body {
     margin: 120px 0 0;
     width: 280px;
 }
+.header_selproposal {
+	height:150px;
+}
 .header_wimg p {
 	margin: 0 0 80px;
 }
@@ -42,15 +45,34 @@ body {
 	margin: 0 auto 0 auto;
 }
 .input-button {
+	position:relative;
 	clear:both;
 	height: 20px;
 	margin-bottom: 65px;
+}
+.input-button span {
+	position: absolute;
+    top: 0;	
+}
+.left .input-button span {
+	left:-50px;
+}
+.right .input-button span {
+	right:-50px;;
+}
+
+.right .input-button {
+	margin-right:50px;
+}
+.left .input-button {
+	margin-left:50px;
 }
 .left {
 	float:left;
 }
 .right {
 	float:right;
+	text-align:right
 }
 .absolute {
 	position: absolute;
