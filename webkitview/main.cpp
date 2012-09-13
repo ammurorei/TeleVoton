@@ -8,7 +8,8 @@ int main(int argc, char *argv[])
     Html5ApplicationViewer viewer;
     viewer.setOrientation(Html5ApplicationViewer::ScreenOrientationAuto);
     viewer.showExpanded();
-    viewer.loadFile(QLatin1String("html/welcome_video.html"));
+    viewer.resize(640, 480);
+    viewer.loadFile(QLatin1String("html/welcome_page.html"));
 
     return app.exec();
 }

@@ -1233,6 +1233,86 @@ void Html5ApplicationViewer::onDataAvailable() {
     QString string(data);
     QString url(m_d->m_webView->url().toString());
     qDebug() << "Data: " << string;
+    if (url.endsWith("cancel_screen_1.html")) {
+        if (string == "N") {
+            this->loadFile(QLatin1String("html/select_type_of_voting.html"));
+        }
+    }
+    if (url.endsWith("cancel_screen_2.html")) {
+        if (string == "N") {
+            this->loadFile(QLatin1String("html/select_type_of_voting.html"));
+        }
+    }
+    if (url.endsWith("welcome_page.html")) {
+        if (string == "N") {
+            this->loadFile(QLatin1String("html/select_type_of_voting.html"));
+        }
+    }
+    if (url.endsWith("welcome_page.html")) {
+        if (string == "N") {
+            this->loadFile(QLatin1String("html/select_type_of_voting.html"));
+        }
+    }
+    if (url.endsWith("welcome_page.html")) {
+        if (string == "N") {
+            this->loadFile(QLatin1String("html/select_type_of_voting.html"));
+        }
+    }
+    if (url.endsWith("welcome_page.html")) {
+        if (string == "N") {
+            this->loadFile(QLatin1String("html/select_type_of_voting.html"));
+        }
+    }
+    if (url.endsWith("welcome_page.html")) {
+        if (string == "N") {
+            this->loadFile(QLatin1String("html/select_type_of_voting.html"));
+        }
+    }
+    if (url.endsWith("welcome_page.html")) {
+        if (string == "N") {
+            this->loadFile(QLatin1String("html/select_type_of_voting.html"));
+        }
+    }
+    if (url.endsWith("welcome_page.html")) {
+        if (string == "N") {
+            this->loadFile(QLatin1String("html/select_type_of_voting.html"));
+        }
+    }
+    if (url.endsWith("welcome_page.html")) {
+        if (string == "N") {
+            this->loadFile(QLatin1String("html/select_type_of_voting.html"));
+        }
+    }
+    if (url.endsWith("welcome_page.html")) {
+        if (string == "N") {
+            this->loadFile(QLatin1String("html/select_type_of_voting.html"));
+        }
+    }
+    if (url.endsWith("welcome_page.html")) {
+        if (string == "N") {
+            this->loadFile(QLatin1String("html/select_type_of_voting.html"));
+        }
+    }
+    if (url.endsWith("welcome_page.html")) {
+        if (string == "N") {
+            this->loadFile(QLatin1String("html/select_type_of_voting.html"));
+        }
+    }
+    if (url.endsWith("welcome_page.html")) {
+        if (string == "N") {
+            this->loadFile(QLatin1String("html/select_type_of_voting.html"));
+        }
+    }
+    if (url.endsWith("welcome_page.html")) {
+        if (string == "N") {
+            this->loadFile(QLatin1String("html/select_type_of_voting.html"));
+        }
+    }
+    if (url.endsWith("welcome_page.html")) {
+        if (string == "N") {
+            this->loadFile(QLatin1String("html/select_type_of_voting.html"));
+        }
+    }
     if (url.endsWith("welcome_page.html")) {
         if (string == "N") {
             this->loadFile(QLatin1String("html/select_type_of_voting.html"));

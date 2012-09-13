@@ -32,3 +32,11 @@ SOURCES += main.cpp
 # Please do not modify the following two lines. Required for deployment.
 include(html5applicationviewer/html5applicationviewer.pri)
 qtcAddDeployment()
+
+#included for serial port comms thru qextserialport
+#to use the lib do:
+# #include "qextserialport.h"
+# ....
+# QextSerialPort * port = new QextSerialPort();
+# ....
+include(3rdparty/qextserialport/src/qextserialport.pri)

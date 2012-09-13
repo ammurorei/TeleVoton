@@ -13,6 +13,8 @@
 #include <QWidget>
 #include <QUrl>
 
+#include "qextserialport.h"
+
 class QGraphicsWebView;
 
 class Html5ApplicationViewer : public QWidget
@@ -38,9 +40,12 @@ public:
     void showExpanded();
 
     QGraphicsWebView *webView() const;
+ public slots:
+    void onDataAvailable();
 
 private:
     class Html5ApplicationViewerPrivate *m_d;
+    QextSerialPort* port;
 };
 
 #endif // HTML5APPLICATIONVIEWER_H
