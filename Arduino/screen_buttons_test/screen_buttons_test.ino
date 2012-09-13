@@ -48,8 +48,6 @@ void setup() {
     digitalWrite(i, HIGH);
   }
   for(int i = 22; i <= 36; i+=2) {
-     Serial.print("Setting ");
-     Serial.println(i);
      pinMode(i, INPUT);//INPUT_PULLUP
     digitalWrite(i, HIGH);
   }
