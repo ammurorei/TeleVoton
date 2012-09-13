@@ -10,8 +10,9 @@
 #ifndef HTML5APPLICATIONVIEWER_H
 #define HTML5APPLICATIONVIEWER_H
 
-#include <QWidget>
+#include <QStack>
 #include <QUrl>
+#include <QWidget>
 
 #include "qextserialport.h"
 
@@ -46,6 +47,7 @@ public:
 private:
     class Html5ApplicationViewerPrivate *m_d;
     QextSerialPort* port;
+    QStack<QString> pageHistory;
 };
 
 #endif // HTML5APPLICATIONVIEWER_H

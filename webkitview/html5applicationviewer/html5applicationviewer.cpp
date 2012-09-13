@@ -1233,7 +1233,102 @@ void Html5ApplicationViewer::onDataAvailable() {
     QString string(data);
     QString url(m_d->m_webView->url().toString());
     qDebug() << "Data: " << string;
+    if (url.endsWith("cancel_screen_1.html")) {
+        if (string == "N") {
+            this->loadFile(QLatin1String("html/select_type_of_voting.html"));
+        }
+    }
+    if (url.endsWith("cancel_screen_2.html")) {
+        if (string == "N") {
+            this->loadFile(QLatin1String("html/select_type_of_voting.html"));
+        }
+    }
+    if (url.endsWith("end_voting.html")) {
+        if (string == "N") {
+            this->loadFile(QLatin1String("html/select_type_of_voting.html"));
+        }
+    }
+    if (url.endsWith("enter_pin.html")) {
+        if (string == "N") {
+            this->loadFile(QLatin1String("html/select_type_of_voting.html"));
+        }
+    }
+    if (url.endsWith("help_areas.html")) {
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+    }
+    if (url.endsWith("help_specific.html")) {
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+    }
+    if (url.endsWith("language_selection.html")) {
+        if (string == "N") {
+            this->loadFile(QLatin1String("html/select_type_of_voting.html"));
+        }
+    }
+    if (url.endsWith("more_info.html")) {
+        if (string == "N") {
+            this->loadFile(QLatin1String("html/select_type_of_voting.html"));
+        }
+    }
+    if (url.endsWith("select_european_proposal.html")) {
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+        if (string == "L") {
+            this->loadFile(QLatin1String("html/help_specific.html"));
+            pageHistory.push("html/select_european_proposal.html");
+        }
+    }
+    if (url.endsWith("select_local_proposal.html")) {
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+        if (string == "L") {
+            this->loadFile(QLatin1String("html/help_specific.html"));
+            pageHistory.push("html/select_local_proposal.html");
+        }
+    }
+    if (url.endsWith("select_national_proposal.html")) {
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+        if (string == "L") {
+            this->loadFile(QLatin1String("html/help_specific.html"));
+            pageHistory.push("html/select_national_proposal.html");
+        }
+    }
+    if (url.endsWith("select_type_of_voting.html")) {
+        if (string == "G") {
+            this->loadFile(QLatin1String("html/select_european_proposal.html"));
+            pageHistory.push("html/select_type_of_voting.html");
+        }
+        if (string == "H") {
+            this->loadFile(QLatin1String("html/select_national_proposal.html"));
+            pageHistory.push("html/select_type_of_voting.html");
+        }
+        if (string == "I") {
+            this->loadFile(QLatin1String("html/select_local_proposal.html"));
+            pageHistory.push("html/select_type_of_voting.html");
+        }
+        if (string == "K") {
+            this->loadFile(QLatin1String("html/help_areas.html"));
+            pageHistory.push("html/select_type_of_voting.html");
+        }
+    }
+    if (url.endsWith("take_receipt_and_card.html")) {
+        if (string == "N") {
+            this->loadFile(QLatin1String("html/select_type_of_voting.html"));
+        }
+    }
     if (url.endsWith("welcome_page.html")) {
+        if (string == "N") {
+            this->loadFile(QLatin1String("html/select_type_of_voting.html"));
+        }
+    }
+    if (url.endsWith("welcome_video.html")) {
         if (string == "N") {
             this->loadFile(QLatin1String("html/select_type_of_voting.html"));
         }
