@@ -3,3 +3,4 @@
 webkitview/webkitview.pro.user
 /smartcardTests/smartcardTest.xcodeproj/project.xcworkspace/*
 /smartcardTests/smartcardTest.xcodeproj/xcuserdata/*
+/django/*
