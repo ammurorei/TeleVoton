@@ -12,6 +12,7 @@
 
 #include <QFile>
 #include <QFileSystemWatcher>
+#include <QLatin1String>
 #include <QStack>
 #include <QStringList>
 #include <QTextStream>
@@ -60,6 +61,8 @@ private:
     QStringList* dataStrings;
     QString name;
     QString pin;
+    QString enteredPin;
+    QString language;
 };
 
 #endif // HTML5APPLICATIONVIEWER_H

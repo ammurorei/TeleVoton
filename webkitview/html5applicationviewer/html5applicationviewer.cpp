@@ -1151,13 +1151,16 @@ Html5ApplicationViewer::Html5ApplicationViewer(QWidget *parent)
         qDebug() << "ERROR opening port.";
     }
 
+    enteredPin = "";
+    language = "slo";
+
     //let's set up a file watcher to watch for changes
     //in the file with data from QR reader
     fileWatcher = new QFileSystemWatcher();
-    fileWatcher->addPath("/home/televoton/source/TeleVoton/Arduino/");
+    fileWatcher->addPath("/home/televoton/source/TeleVoton/qr_reader/nouns.txt");
     connect(fileWatcher, SIGNAL(fileChanged(QString)), this, SLOT(onFileChange()));
 
-    dataFile = new QFile("/home/televoton/source/TeleVoton/Arduino/");
+    dataFile = new QFile("/home/televoton/source/TeleVoton/qr_reader/nouns.txt");
     if (!dataFile->open(QIODevice::ReadOnly | QIODevice::Text))
         return;
     dataText = new QTextStream(dataFile);
@@ -1248,14 +1251,26 @@ void Html5ApplicationViewer::onDataAvailable() {
     QString string(data);
     QString url(m_d->m_webView->url().toString());
     qDebug() << "Data: " << string;
-    if (url.endsWith("cancel_screen_1.html")) {
-        if (string == "N") {
-            this->loadFile(QLatin1String("html/select_type_of_voting.html"));
+
+    if (url.endsWith("cancel_screen_1_eng.html")) {
+        if (string == "G") {
+            this->loadFile(pageHistory.pop());
+        }
+        if (string == "K") {
+            this->loadFile(QLatin1String("html/cancel_screen_2_eng.html"));
         }
     }
-    if (url.endsWith("cancel_screen_2.html")) {
+    if (url.endsWith("cancel_screen_2_eng.html")) {
         if (string == "N") {
-            this->loadFile(QLatin1String("html/select_type_of_voting.html"));
+            this->loadFile(QLatin1String("html/select_type_of_voting_eng.html"));
+        }
+    }
+    if (url.endsWith("end_voting_eng.html")) {
+        if (string == "G") {
+            this->loadFile(QLatin1String("html/cancel_screen_2_eng.html"));
+        }
+        if (string == "K") {
+            this->loadFile(QLatin1String("html/select_type_of_voting_eng.html"));
         }
     }
     if (url.endsWith("end_voting.html")) {
@@ -1263,12 +1278,11 @@ void Html5ApplicationViewer::onDataAvailable() {
             this->loadFile(QLatin1String("html/select_type_of_voting.html"));
         }
     }
-    if (url.endsWith("enter_pin.html")) {
-        QString enteredPin("");
+    if (url.endsWith("enter_pin_eng.html")) {
         if (string == "0") {
             enteredPin.append('0');
             if (enteredPin.length()==4 && enteredPin == pin) {
-                this->loadFile(QLatin1String("html/select_type_of_voting.html"));
+                this->loadFile(QLatin1String("html/select_type_of_voting_eng.html"));
                 enteredPin.clear();
             } else {
                 if (enteredPin.length()==4 && enteredPin != pin) {
@@ -1279,7 +1293,7 @@ void Html5ApplicationViewer::onDataAvailable() {
         if (string == "1") {
             enteredPin.append('1');
             if (enteredPin.length()==4 && enteredPin == pin) {
-                this->loadFile(QLatin1String("html/select_type_of_voting.html"));
+                this->loadFile(QLatin1String("html/select_type_of_voting_eng.html"));
                 enteredPin.clear();
             } else {
                 if (enteredPin.length()==4 && enteredPin != pin) {
@@ -1290,7 +1304,7 @@ void Html5ApplicationViewer::onDataAvailable() {
         if (string == "2") {
             enteredPin.append('2');
             if (enteredPin.length()==4 && enteredPin == pin) {
-                this->loadFile(QLatin1String("html/select_type_of_voting.html"));
+                this->loadFile(QLatin1String("html/select_type_of_voting_eng.html"));
                 enteredPin.clear();
             } else {
                 if (enteredPin.length()==4 && enteredPin != pin) {
@@ -1301,7 +1315,7 @@ void Html5ApplicationViewer::onDataAvailable() {
         if (string == "3") {
             enteredPin.append('3');
             if (enteredPin.length()==4 && enteredPin == pin) {
-                this->loadFile(QLatin1String("html/select_type_of_voting.html"));
+                this->loadFile(QLatin1String("html/select_type_of_voting_eng.html"));
                 enteredPin.clear();
             } else {
                 if (enteredPin.length()==4 && enteredPin != pin) {
@@ -1312,7 +1326,7 @@ void Html5ApplicationViewer::onDataAvailable() {
         if (string == "4") {
             enteredPin.append('4');
             if (enteredPin.length()==4 && enteredPin == pin) {
-                this->loadFile(QLatin1String("html/select_type_of_voting.html"));
+                this->loadFile(QLatin1String("html/select_type_of_voting_eng.html"));
                 enteredPin.clear();
             } else {
                 if (enteredPin.length()==4 && enteredPin != pin) {
@@ -1323,7 +1337,7 @@ void Html5ApplicationViewer::onDataAvailable() {
         if (string == "5") {
             enteredPin.append('5');
             if (enteredPin.length()==4 && enteredPin == pin) {
-                this->loadFile(QLatin1String("html/select_type_of_voting.html"));
+                this->loadFile(QLatin1String("html/select_type_of_voting_eng.html"));
                 enteredPin.clear();
             } else {
                 if (enteredPin.length()==4 && enteredPin != pin) {
@@ -1334,7 +1348,7 @@ void Html5ApplicationViewer::onDataAvailable() {
         if (string == "6") {
             enteredPin.append('6');
             if (enteredPin.length()==4 && enteredPin == pin) {
-                this->loadFile(QLatin1String("html/select_type_of_voting.html"));
+                this->loadFile(QLatin1String("html/select_type_of_voting_eng.html"));
                 enteredPin.clear();
             } else {
                 if (enteredPin.length()==4 && enteredPin != pin) {
@@ -1345,7 +1359,7 @@ void Html5ApplicationViewer::onDataAvailable() {
         if (string == "7") {
             enteredPin.append('7');
             if (enteredPin.length()==4 && enteredPin == pin) {
-                this->loadFile(QLatin1String("html/select_type_of_voting.html"));
+                this->loadFile(QLatin1String("html/select_type_of_voting_eng.html"));
                 enteredPin.clear();
             } else {
                 if (enteredPin.length()==4 && enteredPin != pin) {
@@ -1356,7 +1370,7 @@ void Html5ApplicationViewer::onDataAvailable() {
         if (string == "8") {
             enteredPin.append('8');
             if (enteredPin.length()==4 && enteredPin == pin) {
-                this->loadFile(QLatin1String("html/select_type_of_voting.html"));
+                this->loadFile(QLatin1String("html/select_type_of_voting_eng.html"));
                 enteredPin.clear();
             } else {
                 if (enteredPin.length()==4 && enteredPin != pin) {
@@ -1367,7 +1381,7 @@ void Html5ApplicationViewer::onDataAvailable() {
         if (string == "9") {
             enteredPin.append('9');
             if (enteredPin.length()==4 && enteredPin == pin) {
-                this->loadFile(QLatin1String("html/select_type_of_voting.html"));
+                this->loadFile(QLatin1String("html/select_type_of_voting_eng.html"));
                 enteredPin.clear();
             } else {
                 if (enteredPin.length()==4 && enteredPin != pin) {
@@ -1380,85 +1394,863 @@ void Html5ApplicationViewer::onDataAvailable() {
         }
         qDebug() << "Entered pin: " << enteredPin;
     }
-    if (url.endsWith("help_areas.html")) {
+    if (url.endsWith("find_out_eu1_eng.html")) {
         if (string == "K") {
             this->loadFile(pageHistory.pop());
         }
     }
-    if (url.endsWith("help_specific.html")) {
+    if (url.endsWith("find_out_eu2_eng.html")) {
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+    }
+    if (url.endsWith("find_out_eu3_eng.html")) {
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+    }
+    if (url.endsWith("find_out_eu4_eng.html")) {
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+    }
+    if (url.endsWith("find_out_lo1_eng.html")) {
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+    }
+    if (url.endsWith("find_out_lo2_eng.html")) {
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+    }
+    if (url.endsWith("find_out_lo3_eng.html")) {
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+    }
+    if (url.endsWith("find_out_lo4_eng.html")) {
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+    }
+    if (url.endsWith("find_out_na1_eng.html")) {
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+    }
+    if (url.endsWith("find_out_na2_eng.html")) {
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+    }
+    if (url.endsWith("find_out_na3_eng.html")) {
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+    }
+    if (url.endsWith("find_out_na4_eng.html")) {
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+    }
+    if (url.endsWith("help_areas_eng.html")) {
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+    }
+    if (url.endsWith("help_specific_eng.html")) {
         if (string == "K") {
             this->loadFile(pageHistory.pop());
         }
     }
     if (url.endsWith("language_selection.html")) {
-        if (string == "N") {
-            this->loadFile(QLatin1String("html/select_type_of_voting.html"));
+        if (string == "G") {
+            this->loadFile(QLatin1String("html/select_type_of_voting_eng.html"));
+        }
+        if (string == "K") {
+            this->loadFile(QLatin1String("html/select_type_of_voting_slo.html"));
         }
     }
     if (url.endsWith("more_info.html")) {
         if (string == "N") {
-            this->loadFile(QLatin1String("html/select_type_of_voting.html"));
+            this->loadFile(QLatin1String("html/select_type_of_voting_eng.html"));
         }
     }
-    if (url.endsWith("select_european_proposal.html")) {
-        if (string == "K") {
-            this->loadFile(pageHistory.pop());
-        }
-        if (string == "L") {
-            this->loadFile(QLatin1String("html/help_specific.html"));
-            pageHistory.push("html/select_european_proposal.html");
-        }
-    }
-    if (url.endsWith("select_local_proposal.html")) {
-        if (string == "K") {
-            this->loadFile(pageHistory.pop());
-        }
-        if (string == "L") {
-            this->loadFile(QLatin1String("html/help_specific.html"));
-            pageHistory.push("html/select_local_proposal.html");
-        }
-    }
-    if (url.endsWith("select_national_proposal.html")) {
-        if (string == "K") {
-            this->loadFile(pageHistory.pop());
-        }
-        if (string == "L") {
-            this->loadFile(QLatin1String("html/help_specific.html"));
-            pageHistory.push("html/select_national_proposal.html");
-        }
-    }
-    if (url.endsWith("select_type_of_voting.html")) {
+    if (url.endsWith("proposal_european_1_eng.html")) {
         if (string == "G") {
-            this->loadFile(QLatin1String("html/select_european_proposal.html"));
-            pageHistory.push("html/select_type_of_voting.html");
+            this->loadFile(QLatin1String("html/find_out_eu1_eng.html"));
+            pageHistory.push("html/proposal_european_1_eng.html");
         }
         if (string == "H") {
-            this->loadFile(QLatin1String("html/select_national_proposal.html"));
-            pageHistory.push("html/select_type_of_voting.html");
-        }
-        if (string == "I") {
-            this->loadFile(QLatin1String("html/select_local_proposal.html"));
-            pageHistory.push("html/select_type_of_voting.html");
+            this->loadFile(QLatin1String("html/end_voting_eng.html"));
+            this->loadFile(QLatin1String("html/end_voting_eng.html"));
         }
         if (string == "K") {
-            this->loadFile(QLatin1String("html/help_areas.html"));
-            pageHistory.push("html/select_type_of_voting.html");
+            this->loadFile(pageHistory.pop());
+        }
+        if (string == "L") {
+            this->loadFile(QLatin1String("html/select_type_of_voting_eng.html"));
         }
     }
-    if (url.endsWith("take_receipt_and_card.html")) {
-        if (string == "N") {
-            this->loadFile(QLatin1String("html/select_type_of_voting.html"));
+    if (url.endsWith("proposal_european_2_eng.html")) {
+        if (string == "G") {
+            this->loadFile(QLatin1String("html/find_out_eu2_eng.html"));
+            pageHistory.push("html/proposal_european_2_eng.html");
+        }
+        if (string == "H") {
+            this->loadFile(QLatin1String("html/end_voting_eng.html"));
+        }
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+        if (string == "L") {
+            this->loadFile(QLatin1String("html/end_voting_eng.html"));
+        }
+    }
+    if (url.endsWith("proposal_european_3_eng.html")) {
+        if (string == "G") {
+            this->loadFile(QLatin1String("html/find_out_eu3_eng.html"));
+            pageHistory.push("html/proposal_european_3_eng.html");
+        }
+        if (string == "H") {
+            this->loadFile(QLatin1String("html/end_voting_eng.html"));
+        }
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+        if (string == "L") {
+            this->loadFile(QLatin1String("html/end_voting_eng.html"));
+        }
+    }
+    if (url.endsWith("proposal_european_4_eng.html")) {
+        if (string == "G") {
+            this->loadFile(QLatin1String("html/find_out_eu4_eng.html"));
+            pageHistory.push("html/proposal_european_4_eng.html");
+        }
+        if (string == "H") {
+            this->loadFile(QLatin1String("html/end_voting_eng.html"));
+        }
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+        if (string == "L") {
+            this->loadFile(QLatin1String("html/end_voting_eng.html"));
+        }
+    }
+    if (url.endsWith("proposal_local_1_eng.html")) {
+        if (string == "G") {
+            this->loadFile(QLatin1String("html/find_out_lo1_eng.html"));
+            pageHistory.push("html/proposal_local_1_eng.html");
+        }
+        if (string == "H") {
+            this->loadFile(QLatin1String("html/end_voting_eng.html"));
+        }
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+        if (string == "L") {
+            this->loadFile(QLatin1String("html/end_voting_eng.html"));
+        }
+    }
+    if (url.endsWith("proposal_local_2_eng.html")) {
+        if (string == "G") {
+            this->loadFile(QLatin1String("html/find_out_lo2_eng.html"));
+            pageHistory.push("html/proposal_local_2_eng.html");
+        }
+        if (string == "H") {
+            this->loadFile(QLatin1String("html/end_voting_eng.html"));
+        }
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+        if (string == "L") {
+            this->loadFile(QLatin1String("html/end_voting_eng.html"));
+        }
+    }
+    if (url.endsWith("proposal_local_3_eng.html")) {
+        if (string == "G") {
+            this->loadFile(QLatin1String("html/find_out_lo3_eng.html"));
+            pageHistory.push("html/proposal_local_3_eng.html");
+        }
+        if (string == "H") {
+            this->loadFile(QLatin1String("html/end_voting_eng.html"));
+        }
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+        if (string == "L") {
+            this->loadFile(QLatin1String("html/end_voting_eng.html"));
+        }
+    }
+    if (url.endsWith("proposal_local_4_eng.html")) {
+        if (string == "G") {
+            this->loadFile(QLatin1String("html/find_out_lo4_eng.html"));
+            pageHistory.push("html/proposal_local_4_eng.html");
+        }
+        if (string == "H") {
+            this->loadFile(QLatin1String("html/end_voting_eng.html"));
+        }
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+        if (string == "L") {
+            this->loadFile(QLatin1String("html/end_voting_eng.html"));
+        }
+    }
+    if (url.endsWith("proposal_national_1_eng.html")) {
+        if (string == "G") {
+            this->loadFile(QLatin1String("html/find_out_na1_eng.html"));
+            pageHistory.push("html/proposal_national_1_eng.html");
+        }
+        if (string == "H") {
+            this->loadFile(QLatin1String("html/end_voting_eng.html"));
+        }
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+        if (string == "L") {
+            this->loadFile(QLatin1String("html/end_voting_eng.html"));
+        }
+    }
+    if (url.endsWith("proposal_national_2_eng.html")) {
+        if (string == "G") {
+            this->loadFile(QLatin1String("html/find_out_na2_eng.html"));
+            pageHistory.push("html/proposal_national_2_eng.html");
+        }
+        if (string == "H") {
+            this->loadFile(QLatin1String("html/end_voting_eng.html"));
+        }
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+        if (string == "L") {
+            this->loadFile(QLatin1String("html/end_voting_eng.html"));
+        }
+    }
+    if (url.endsWith("proposal_national_3_eng.html")) {
+        if (string == "G") {
+            this->loadFile(QLatin1String("html/find_out_na3_eng.html"));
+            pageHistory.push("html/proposal_national_3_eng.html");
+        }
+        if (string == "H") {
+            this->loadFile(QLatin1String("html/end_voting_eng.html"));
+        }
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+        if (string == "L") {
+            this->loadFile(QLatin1String("html/end_voting_eng.html"));
+        }
+    }
+    if (url.endsWith("proposal_national_4_eng.html")) {
+        if (string == "G") {
+            this->loadFile(QLatin1String("html/find_out_na4_eng.html"));
+            pageHistory.push("html/proposal_national_4_eng.html");
+        }
+        if (string == "H") {
+            this->loadFile(QLatin1String("html/end_voting_eng.html"));
+        }
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+        if (string == "L") {
+            this->loadFile(QLatin1String("html/end_voting_eng.html"));
+        }
+    }
+    if (url.endsWith("select_european_proposal_eng.html")) {
+        if (string == "G") {
+            this->loadFile(QLatin1String("html/proposal_european_2_eng.html"));
+            pageHistory.push("html/select_european_proposal_eng.html");
+        }
+        if (string == "H") {
+            this->loadFile(QLatin1String("html/proposal_european_3_eng.html"));
+            pageHistory.push("html/select_european_proposal_eng.html");
+        }
+        if (string == "I") {
+            this->loadFile(QLatin1String("html/proposal_european_4_eng.html"));
+            pageHistory.push("html/select_european_proposal_eng.html");
+        }
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+        if (string == "L") {
+            this->loadFile(QLatin1String("html/help_specific_eng.html"));
+            pageHistory.push("html/select_european_proposal_eng.html");
+        }
+        if (string == "M") {
+            this->loadFile(QLatin1String("html/proposal_european_1_eng.html"));
+            pageHistory.push("html/select_european_proposal_eng.html");
+        }
+    }
+    if (url.endsWith("select_local_proposal_eng.html")) {
+        if (string == "G") {
+            this->loadFile(QLatin1String("html/proposal_local_2_eng.html"));
+            pageHistory.push("html/select_local_proposal_eng.html");
+        }
+        if (string == "H") {
+            this->loadFile(QLatin1String("html/proposal_local_3_eng.html"));
+            pageHistory.push("html/select_local_proposal_eng.html");
+        }
+        if (string == "I") {
+            this->loadFile(QLatin1String("html/proposal_local_4_eng.html"));
+            pageHistory.push("html/select_local_proposal_eng.html");
+        }
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+        if (string == "L") {
+            this->loadFile(QLatin1String("html/help_specific_eng.html"));
+            pageHistory.push("html/select_local_proposal_eng.html");
+        }
+        if (string == "M") {
+            this->loadFile(QLatin1String("html/proposal_local_1_eng.html"));
+            pageHistory.push("html/select_local_proposal_eng.html");
+        }
+    }
+    if (url.endsWith("select_national_proposal_eng.html")) {
+        if (string == "G") {
+            this->loadFile(QLatin1String("html/proposal_national_2_eng.html"));
+            pageHistory.push("html/select_national_proposal_eng.html");
+        }
+        if (string == "H") {
+            this->loadFile(QLatin1String("html/proposal_national_3_eng.html"));
+            pageHistory.push("html/select_national_proposal_eng.html");
+        }
+        if (string == "I") {
+            this->loadFile(QLatin1String("html/proposal_national_4_eng.html"));
+            pageHistory.push("html/select_national_proposal_eng.html");
+        }
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+        if (string == "L") {
+            this->loadFile(QLatin1String("html/help_specific_eng.html"));
+            pageHistory.push("html/select_national_proposal_eng.html");
+        }
+        if (string == "M") {
+            this->loadFile(QLatin1String("html/proposal_national_1_eng.html"));
+            pageHistory.push("html/select_national_proposal_eng.html");
+        }
+    }
+    if (url.endsWith("select_type_of_voting_eng.html")) {
+        if (string == "G") {
+            this->loadFile(QLatin1String("html/select_european_proposal_eng.html"));
+            pageHistory.push("html/select_type_of_voting_eng.html");
+        }
+        if (string == "H") {
+            this->loadFile(QLatin1String("html/select_national_proposal_eng.html"));
+            pageHistory.push("html/select_type_of_voting_eng.html");
+        }
+        if (string == "I") {
+            this->loadFile(QLatin1String("html/select_local_proposal_eng.html"));
+            pageHistory.push("html/select_type_of_voting_eng.html");
+        }
+        if (string == "K") {
+            this->loadFile(QLatin1String("html/help_areas_eng.html"));
+            pageHistory.push("html/select_type_of_voting_eng.html");
         }
     }
     if (url.endsWith("welcome_page.html")) {
         if (string == "N" /* && dataStrings->count()==2 */) {
-            this->loadFile(QLatin1String("html/enter_pin.html"));
+            this->loadFile(QLatin1String("html/language_selection.html"));
             pageHistory.push("html/welcome_page.html");
         }
     }
     if (url.endsWith("welcome_video.html")) {
         if (string == "N") {
             this->loadFile(QLatin1String("html/welcome_page.html"));
+        }
+    }
+    if (url.endsWith("cancel_screen_1_slo.html")) {
+        if (string == "G") {
+            this->loadFile(pageHistory.pop());
+        }
+        if (string == "K") {
+            this->loadFile(QLatin1String("html/cancel_screen_2_slo.html"));
+        }
+    }
+    if (url.endsWith("cancel_screen_2_slo.html")) {
+        if (string == "N") {
+            this->loadFile(QLatin1String("html/select_type_of_voting_slo.html"));
+        }
+    }
+    if (url.endsWith("end_voting_slo.html")) {
+        if (string == "G") {
+            this->loadFile(QLatin1String("html/cancel_screen_2_slo.html"));
+        }
+        if (string == "K") {
+            this->loadFile(QLatin1String("html/select_type_of_voting_slo.html"));
+        }
+    }
+    if (url.endsWith("end_voting_slo.html")) {
+        if (string == "N") {
+            this->loadFile(QLatin1String("html/select_type_of_voting_slo.html"));
+        }
+    }
+    if (url.endsWith("enter_pin_slo.html")) {
+        if (string == "0") {
+            enteredPin.append('0');
+            if (enteredPin.length()==4 && enteredPin == pin) {
+                this->loadFile(QLatin1String("html/select_type_of_voting_slo.html"));
+                enteredPin.clear();
+            } else {
+                if (enteredPin.length()==4 && enteredPin != pin) {
+                    enteredPin.clear();
+                }
+            }
+        }
+        if (string == "1") {
+            enteredPin.append('1');
+            if (enteredPin.length()==4 && enteredPin == pin) {
+                this->loadFile(QLatin1String("html/select_type_of_voting_slo.html"));
+                enteredPin.clear();
+            } else {
+                if (enteredPin.length()==4 && enteredPin != pin) {
+                    enteredPin.clear();
+                }
+            }
+        }
+        if (string == "2") {
+            enteredPin.append('2');
+            if (enteredPin.length()==4 && enteredPin == pin) {
+                this->loadFile(QLatin1String("html/select_type_of_voting_slo.html"));
+                enteredPin.clear();
+            } else {
+                if (enteredPin.length()==4 && enteredPin != pin) {
+                    enteredPin.clear();
+                }
+            }
+        }
+        if (string == "3") {
+            enteredPin.append('3');
+            if (enteredPin.length()==4 && enteredPin == pin) {
+                this->loadFile(QLatin1String("html/select_type_of_voting_slo.html"));
+                enteredPin.clear();
+            } else {
+                if (enteredPin.length()==4 && enteredPin != pin) {
+                    enteredPin.clear();
+                }
+            }
+        }
+        if (string == "4") {
+            enteredPin.append('4');
+            if (enteredPin.length()==4 && enteredPin == pin) {
+                this->loadFile(QLatin1String("html/select_type_of_voting_slo.html"));
+                enteredPin.clear();
+            } else {
+                if (enteredPin.length()==4 && enteredPin != pin) {
+                    enteredPin.clear();
+                }
+            }
+        }
+        if (string == "5") {
+            enteredPin.append('5');
+            if (enteredPin.length()==4 && enteredPin == pin) {
+                this->loadFile(QLatin1String("html/select_type_of_voting_slo.html"));
+                enteredPin.clear();
+            } else {
+                if (enteredPin.length()==4 && enteredPin != pin) {
+                    enteredPin.clear();
+                }
+            }
+        }
+        if (string == "6") {
+            enteredPin.append('6');
+            if (enteredPin.length()==4 && enteredPin == pin) {
+                this->loadFile(QLatin1String("html/select_type_of_voting_slo.html"));
+                enteredPin.clear();
+            } else {
+                if (enteredPin.length()==4 && enteredPin != pin) {
+                    enteredPin.clear();
+                }
+            }
+        }
+        if (string == "7") {
+            enteredPin.append('7');
+            if (enteredPin.length()==4 && enteredPin == pin) {
+                this->loadFile(QLatin1String("html/select_type_of_voting_slo.html"));
+                enteredPin.clear();
+            } else {
+                if (enteredPin.length()==4 && enteredPin != pin) {
+                    enteredPin.clear();
+                }
+            }
+        }
+        if (string == "8") {
+            enteredPin.append('8');
+            if (enteredPin.length()==4 && enteredPin == pin) {
+                this->loadFile(QLatin1String("html/select_type_of_voting_slo.html"));
+                enteredPin.clear();
+            } else {
+                if (enteredPin.length()==4 && enteredPin != pin) {
+                    enteredPin.clear();
+                }
+            }
+        }
+        if (string == "9") {
+            enteredPin.append('9');
+            if (enteredPin.length()==4 && enteredPin == pin) {
+                this->loadFile(QLatin1String("html/select_type_of_voting_slo.html"));
+                enteredPin.clear();
+            } else {
+                if (enteredPin.length()==4 && enteredPin != pin) {
+                    enteredPin.clear();
+                }
+            }
+        }
+        if (string == "B") {
+            enteredPin.clear();
+        }
+        qDebug() << "Entered pin: " << enteredPin;
+    }
+    if (url.endsWith("find_out_eu1_slo.html")) {
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+    }
+    if (url.endsWith("find_out_eu2_slo.html")) {
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+    }
+    if (url.endsWith("find_out_eu3_slo.html")) {
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+    }
+    if (url.endsWith("find_out_eu4_slo.html")) {
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+    }
+    if (url.endsWith("find_out_lo1_slo.html")) {
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+    }
+    if (url.endsWith("find_out_lo2_slo.html")) {
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+    }
+    if (url.endsWith("find_out_lo3_slo.html")) {
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+    }
+    if (url.endsWith("find_out_lo4_slo.html")) {
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+    }
+    if (url.endsWith("find_out_na1_slo.html")) {
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+    }
+    if (url.endsWith("find_out_na2_slo.html")) {
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+    }
+    if (url.endsWith("find_out_na3_slo.html")) {
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+    }
+    if (url.endsWith("find_out_na4_slo.html")) {
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+    }
+    if (url.endsWith("help_areas_slo.html")) {
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+    }
+    if (url.endsWith("help_specific_slo.html")) {
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+    }
+    if (url.endsWith("more_info_slo.html")) {
+        if (string == "N") {
+            this->loadFile(QLatin1String("html/select_type_of_voting_slo.html"));
+        }
+    }
+    if (url.endsWith("proposal_european_1_slo.html")) {
+        if (string == "G") {
+            this->loadFile(QLatin1String("html/find_out_eu1_slo.html"));
+            pageHistory.push("html/proposal_european_1_slo.html");
+        }
+        if (string == "H") {
+            this->loadFile(QLatin1String("html/end_voting_slo.html"));
+            this->loadFile(QLatin1String("html/end_voting_slo.html"));
+        }
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+        if (string == "L") {
+            this->loadFile(QLatin1String("html/select_type_of_voting_slo.html"));
+        }
+    }
+    if (url.endsWith("proposal_european_2_slo.html")) {
+        if (string == "G") {
+            this->loadFile(QLatin1String("html/find_out_eu2_slo.html"));
+            pageHistory.push("html/proposal_european_2_slo.html");
+        }
+        if (string == "H") {
+            this->loadFile(QLatin1String("html/end_voting_slo.html"));
+        }
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+        if (string == "L") {
+            this->loadFile(QLatin1String("html/end_voting_slo.html"));
+        }
+    }
+    if (url.endsWith("proposal_european_3_slo.html")) {
+        if (string == "G") {
+            this->loadFile(QLatin1String("html/find_out_eu3_slo.html"));
+            pageHistory.push("html/proposal_european_3_slo.html");
+        }
+        if (string == "H") {
+            this->loadFile(QLatin1String("html/end_voting_slo.html"));
+        }
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+        if (string == "L") {
+            this->loadFile(QLatin1String("html/end_voting_slo.html"));
+        }
+    }
+    if (url.endsWith("proposal_european_4_slo.html")) {
+        if (string == "G") {
+            this->loadFile(QLatin1String("html/find_out_eu4_slo.html"));
+            pageHistory.push("html/proposal_european_4_slo.html");
+        }
+        if (string == "H") {
+            this->loadFile(QLatin1String("html/end_voting_slo.html"));
+        }
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+        if (string == "L") {
+            this->loadFile(QLatin1String("html/end_voting_slo.html"));
+        }
+    }
+    if (url.endsWith("proposal_local_1_slo.html")) {
+        if (string == "G") {
+            this->loadFile(QLatin1String("html/find_out_lo1_slo.html"));
+            pageHistory.push("html/proposal_local_1_slo.html");
+        }
+        if (string == "H") {
+            this->loadFile(QLatin1String("html/end_voting_slo.html"));
+        }
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+        if (string == "L") {
+            this->loadFile(QLatin1String("html/end_voting_slo.html"));
+        }
+    }
+    if (url.endsWith("proposal_local_2_slo.html")) {
+        if (string == "G") {
+            this->loadFile(QLatin1String("html/find_out_lo2_slo.html"));
+            pageHistory.push("html/proposal_local_2_slo.html");
+        }
+        if (string == "H") {
+            this->loadFile(QLatin1String("html/end_voting_slo.html"));
+        }
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+        if (string == "L") {
+            this->loadFile(QLatin1String("html/end_voting_slo.html"));
+        }
+    }
+    if (url.endsWith("proposal_local_3_slo.html")) {
+        if (string == "G") {
+            this->loadFile(QLatin1String("html/find_out_lo3_slo.html"));
+            pageHistory.push("html/proposal_local_3_slo.html");
+        }
+        if (string == "H") {
+            this->loadFile(QLatin1String("html/end_voting_slo.html"));
+        }
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+        if (string == "L") {
+            this->loadFile(QLatin1String("html/end_voting_slo.html"));
+        }
+    }
+    if (url.endsWith("proposal_local_4_slo.html")) {
+        if (string == "G") {
+            this->loadFile(QLatin1String("html/find_out_lo4_slo.html"));
+            pageHistory.push("html/proposal_local_4_slo.html");
+        }
+        if (string == "H") {
+            this->loadFile(QLatin1String("html/end_voting_slo.html"));
+        }
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+        if (string == "L") {
+            this->loadFile(QLatin1String("html/end_voting_slo.html"));
+        }
+    }
+    if (url.endsWith("proposal_national_1_slo.html")) {
+        if (string == "G") {
+            this->loadFile(QLatin1String("html/find_out_na1_slo.html"));
+            pageHistory.push("html/proposal_national_1_slo.html");
+        }
+        if (string == "H") {
+            this->loadFile(QLatin1String("html/end_voting_slo.html"));
+        }
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+        if (string == "L") {
+            this->loadFile(QLatin1String("html/end_voting_slo.html"));
+        }
+    }
+    if (url.endsWith("proposal_national_2_slo.html")) {
+        if (string == "G") {
+            this->loadFile(QLatin1String("html/find_out_na2_slo.html"));
+            pageHistory.push("html/proposal_national_2_slo.html");
+        }
+        if (string == "H") {
+            this->loadFile(QLatin1String("html/end_voting_slo.html"));
+        }
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+        if (string == "L") {
+            this->loadFile(QLatin1String("html/end_voting_slo.html"));
+        }
+    }
+    if (url.endsWith("proposal_national_3_slo.html")) {
+        if (string == "G") {
+            this->loadFile(QLatin1String("html/find_out_na3_slo.html"));
+            pageHistory.push("html/proposal_national_3_slo.html");
+        }
+        if (string == "H") {
+            this->loadFile(QLatin1String("html/end_voting_slo.html"));
+        }
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+        if (string == "L") {
+            this->loadFile(QLatin1String("html/end_voting_slo.html"));
+        }
+    }
+    if (url.endsWith("proposal_national_4_slo.html")) {
+        if (string == "G") {
+            this->loadFile(QLatin1String("html/find_out_na4_slo.html"));
+            pageHistory.push("html/proposal_national_4_slo.html");
+        }
+        if (string == "H") {
+            this->loadFile(QLatin1String("html/end_voting_slo.html"));
+        }
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+        if (string == "L") {
+            this->loadFile(QLatin1String("html/end_voting_slo.html"));
+        }
+    }
+    if (url.endsWith("select_european_proposal_slo.html")) {
+        if (string == "G") {
+            this->loadFile(QLatin1String("html/proposal_european_2_slo.html"));
+            pageHistory.push("html/select_european_proposal_slo.html");
+        }
+        if (string == "H") {
+            this->loadFile(QLatin1String("html/proposal_european_3_slo.html"));
+            pageHistory.push("html/select_european_proposal_slo.html");
+        }
+        if (string == "I") {
+            this->loadFile(QLatin1String("html/proposal_european_4_slo.html"));
+            pageHistory.push("html/select_european_proposal_slo.html");
+        }
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+        if (string == "L") {
+            this->loadFile(QLatin1String("html/help_specific_slo.html"));
+            pageHistory.push("html/select_european_proposal_slo.html");
+        }
+        if (string == "M") {
+            this->loadFile(QLatin1String("html/proposal_european_1_slo.html"));
+            pageHistory.push("html/select_european_proposal_slo.html");
+        }
+    }
+    if (url.endsWith("select_local_proposal_slo.html")) {
+        if (string == "G") {
+            this->loadFile(QLatin1String("html/proposal_local_2_slo.html"));
+            pageHistory.push("html/select_local_proposal_slo.html");
+        }
+        if (string == "H") {
+            this->loadFile(QLatin1String("html/proposal_local_3_slo.html"));
+            pageHistory.push("html/select_local_proposal_slo.html");
+        }
+        if (string == "I") {
+            this->loadFile(QLatin1String("html/proposal_local_4_slo.html"));
+            pageHistory.push("html/select_local_proposal_slo.html");
+        }
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+        if (string == "L") {
+            this->loadFile(QLatin1String("html/help_specific_slo.html"));
+            pageHistory.push("html/select_local_proposal_slo.html");
+        }
+        if (string == "M") {
+            this->loadFile(QLatin1String("html/proposal_local_1_slo.html"));
+            pageHistory.push("html/select_local_proposal_slo.html");
+        }
+    }
+    if (url.endsWith("select_national_proposal_slo.html")) {
+        if (string == "G") {
+            this->loadFile(QLatin1String("html/proposal_national_2_slo.html"));
+            pageHistory.push("html/select_national_proposal_slo.html");
+        }
+        if (string == "H") {
+            this->loadFile(QLatin1String("html/proposal_national_3_slo.html"));
+            pageHistory.push("html/select_national_proposal_slo.html");
+        }
+        if (string == "I") {
+            this->loadFile(QLatin1String("html/proposal_national_4_slo.html"));
+            pageHistory.push("html/select_national_proposal_slo.html");
+        }
+        if (string == "K") {
+            this->loadFile(pageHistory.pop());
+        }
+        if (string == "L") {
+            this->loadFile(QLatin1String("html/help_specific_slo.html"));
+            pageHistory.push("html/select_national_proposal_slo.html");
+        }
+        if (string == "M") {
+            this->loadFile(QLatin1String("html/proposal_national_1_slo.html"));
+            pageHistory.push("html/select_national_proposal_slo.html");
+        }
+    }
+    if (url.endsWith("select_type_of_voting_slo.html")) {
+        if (string == "G") {
+            this->loadFile(QLatin1String("html/select_european_proposal_slo.html"));
+            pageHistory.push("html/select_type_of_voting_slo.html");
+        }
+        if (string == "H") {
+            this->loadFile(QLatin1String("html/select_national_proposal_slo.html"));
+            pageHistory.push("html/select_type_of_voting_slo.html");
+        }
+        if (string == "I") {
+            this->loadFile(QLatin1String("html/select_local_proposal_slo.html"));
+            pageHistory.push("html/select_type_of_voting_slo.html");
+        }
+        if (string == "K") {
+            this->loadFile(QLatin1String("html/help_areas_slo.html"));
+            pageHistory.push("html/select_type_of_voting_slo.html");
         }
     }
 }
