@@ -10,7 +10,11 @@
 #ifndef HTML5APPLICATIONVIEWER_H
 #define HTML5APPLICATIONVIEWER_H
 
+#include <QFile>
+#include <QFileSystemWatcher>
 #include <QStack>
+#include <QStringList>
+#include <QTextStream>
 #include <QUrl>
 #include <QWidget>
 
@@ -39,15 +43,23 @@ public:
     void setOrientation(ScreenOrientation orientation);
 
     void showExpanded();
+    QStringList* parseDataFile();
 
     QGraphicsWebView *webView() const;
  public slots:
     void onDataAvailable();
+    void onFileChange();
 
 private:
     class Html5ApplicationViewerPrivate *m_d;
     QextSerialPort* port;
     QStack<QString> pageHistory;
+    QFileSystemWatcher* fileWatcher;
+    QFile* dataFile;
+    QTextStream* dataText;
+    QStringList* dataStrings;
+    QString name;
+    QString pin;
 };
 
 #endif // HTML5APPLICATIONVIEWER_H

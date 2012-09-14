@@ -20,6 +20,8 @@
 #include <QGraphicsScene>
 #include <QGraphicsLinearLayout>
 #include <QGraphicsWebView>
+#include <QString>
+#include <QTextStream>
 #include <QWebFrame>
 
 #ifdef TOUCH_OPTIMIZED_NAVIGATION
@@ -1148,6 +1150,18 @@ Html5ApplicationViewer::Html5ApplicationViewer(QWidget *parent)
     } else {
         qDebug() << "ERROR opening port.";
     }
+
+    //let's set up a file watcher to watch for changes
+    //in the file with data from QR reader
+    fileWatcher = new QFileSystemWatcher();
+    fileWatcher->addPath("/home/televoton/source/TeleVoton/Arduino/");
+    connect(fileWatcher, SIGNAL(fileChanged(QString)), this, SLOT(onFileChange()));
+
+    dataFile = new QFile("/home/televoton/source/TeleVoton/Arduino/");
+    if (!dataFile->open(QIODevice::ReadOnly | QIODevice::Text))
+        return;
+    dataText = new QTextStream(dataFile);
+    parseDataFile();
 }
 
 Html5ApplicationViewer::~Html5ApplicationViewer()
@@ -1229,6 +1243,7 @@ void Html5ApplicationViewer::onDataAvailable() {
     //only read when smartcard is verified
     //depending on the char from port and current view select
     //next HTML view
+
     QByteArray data = port->readAll();
     QString string(data);
     QString url(m_d->m_webView->url().toString());
@@ -1249,9 +1264,121 @@ void Html5ApplicationViewer::onDataAvailable() {
         }
     }
     if (url.endsWith("enter_pin.html")) {
-        if (string == "N") {
-            this->loadFile(QLatin1String("html/select_type_of_voting.html"));
+        QString enteredPin("");
+        if (string == "0") {
+            enteredPin.append('0');
+            if (enteredPin.length()==4 && enteredPin == pin) {
+                this->loadFile(QLatin1String("html/select_type_of_voting.html"));
+                enteredPin.clear();
+            } else {
+                if (enteredPin.length()==4 && enteredPin != pin) {
+                    enteredPin.clear();
+                }
+            }
         }
+        if (string == "1") {
+            enteredPin.append('1');
+            if (enteredPin.length()==4 && enteredPin == pin) {
+                this->loadFile(QLatin1String("html/select_type_of_voting.html"));
+                enteredPin.clear();
+            } else {
+                if (enteredPin.length()==4 && enteredPin != pin) {
+                    enteredPin.clear();
+                }
+            }
+        }
+        if (string == "2") {
+            enteredPin.append('2');
+            if (enteredPin.length()==4 && enteredPin == pin) {
+                this->loadFile(QLatin1String("html/select_type_of_voting.html"));
+                enteredPin.clear();
+            } else {
+                if (enteredPin.length()==4 && enteredPin != pin) {
+                    enteredPin.clear();
+                }
+            }
+        }
+        if (string == "3") {
+            enteredPin.append('3');
+            if (enteredPin.length()==4 && enteredPin == pin) {
+                this->loadFile(QLatin1String("html/select_type_of_voting.html"));
+                enteredPin.clear();
+            } else {
+                if (enteredPin.length()==4 && enteredPin != pin) {
+                    enteredPin.clear();
+                }
+            }
+        }
+        if (string == "4") {
+            enteredPin.append('4');
+            if (enteredPin.length()==4 && enteredPin == pin) {
+                this->loadFile(QLatin1String("html/select_type_of_voting.html"));
+                enteredPin.clear();
+            } else {
+                if (enteredPin.length()==4 && enteredPin != pin) {
+                    enteredPin.clear();
+                }
+            }
+        }
+        if (string == "5") {
+            enteredPin.append('5');
+            if (enteredPin.length()==4 && enteredPin == pin) {
+                this->loadFile(QLatin1String("html/select_type_of_voting.html"));
+                enteredPin.clear();
+            } else {
+                if (enteredPin.length()==4 && enteredPin != pin) {
+                    enteredPin.clear();
+                }
+            }
+        }
+        if (string == "6") {
+            enteredPin.append('6');
+            if (enteredPin.length()==4 && enteredPin == pin) {
+                this->loadFile(QLatin1String("html/select_type_of_voting.html"));
+                enteredPin.clear();
+            } else {
+                if (enteredPin.length()==4 && enteredPin != pin) {
+                    enteredPin.clear();
+                }
+            }
+        }
+        if (string == "7") {
+            enteredPin.append('7');
+            if (enteredPin.length()==4 && enteredPin == pin) {
+                this->loadFile(QLatin1String("html/select_type_of_voting.html"));
+                enteredPin.clear();
+            } else {
+                if (enteredPin.length()==4 && enteredPin != pin) {
+                    enteredPin.clear();
+                }
+            }
+        }
+        if (string == "8") {
+            enteredPin.append('8');
+            if (enteredPin.length()==4 && enteredPin == pin) {
+                this->loadFile(QLatin1String("html/select_type_of_voting.html"));
+                enteredPin.clear();
+            } else {
+                if (enteredPin.length()==4 && enteredPin != pin) {
+                    enteredPin.clear();
+                }
+            }
+        }
+        if (string == "9") {
+            enteredPin.append('9');
+            if (enteredPin.length()==4 && enteredPin == pin) {
+                this->loadFile(QLatin1String("html/select_type_of_voting.html"));
+                enteredPin.clear();
+            } else {
+                if (enteredPin.length()==4 && enteredPin != pin) {
+                    enteredPin.clear();
+                }
+            }
+        }
+        if (string == "B") {
+            enteredPin.clear();
+        }
+        qDebug() << "Entered pin: " << enteredPin;
     }
     if (url.endsWith("help_areas.html")) {
         if (string == "K") {
@@ -1324,15 +1451,36 @@ void Html5ApplicationViewer::onDataAvailable() {
         }
     }
     if (url.endsWith("welcome_page.html")) {
-        if (string == "N") {
-            this->loadFile(QLatin1String("html/select_type_of_voting.html"));
+        if (string == "N" /* && dataStrings->count()==2 */) {
+            this->loadFile(QLatin1String("html/enter_pin.html"));
+            pageHistory.push("html/welcome_page.html");
         }
     }
     if (url.endsWith("welcome_video.html")) {
         if (string == "N") {
-            this->loadFile(QLatin1String("html/select_type_of_voting.html"));
+            this->loadFile(QLatin1String("html/welcome_page.html"));
         }
     }
+}
+
+void Html5ApplicationViewer::onFileChange() {
+    parseDataFile();
+}
+
+QStringList* Html5ApplicationViewer::parseDataFile() {
+    QString line = dataText->readLine();
+    dataStrings = new QStringList(line.split(';'));
+    qDebug() << "Number of data strings: " << dataStrings->count() << "\n";
+    qDebug() << dataStrings;
+    if (dataStrings->count() == 2) {
+        name = dataStrings->at(0);
+        pin = dataStrings->at(1);
+        qDebug() << "Name: " << name << ", pin: " << pin;
+    } else {
+        this->loadFile(QLatin1String("html/welcome_page.html"));
+        pageHistory.clear();
+    }
+    return dataStrings;
 }
 
 #include "html5applicationviewer.moc"
