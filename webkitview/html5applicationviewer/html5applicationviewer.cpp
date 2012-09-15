@@ -22,6 +22,7 @@
 #include <QGraphicsWebView>
 #include <QString>
 #include <QTextStream>
+#include <QWebElement>
 #include <QWebFrame>
 
 #ifdef TOUCH_OPTIMIZED_NAVIGATION
@@ -1279,9 +1280,10 @@ void Html5ApplicationViewer::onDataAvailable() {
         }
     }
     if (url.endsWith("enter_pin_eng.html")) {
+        QWebElement inputField = webView()->page()->currentFrame()->findFirstElement("input.pin");
         if (string == "0") {
             enteredPin.append('0');
-            if (enteredPin.length()==4 && enteredPin == pin) {
+            if (enteredPin.length()==4) {
                 this->loadFile(QLatin1String("html/select_type_of_voting_eng.html"));
                 enteredPin.clear();
             } else {
@@ -1292,7 +1294,7 @@ void Html5ApplicationViewer::onDataAvailable() {
         }
         if (string == "1") {
             enteredPin.append('1');
-            if (enteredPin.length()==4 && enteredPin == pin) {
+            if (enteredPin.length()==4) {
                 this->loadFile(QLatin1String("html/select_type_of_voting_eng.html"));
                 enteredPin.clear();
             } else {
@@ -1303,7 +1305,7 @@ void Html5ApplicationViewer::onDataAvailable() {
         }
         if (string == "2") {
             enteredPin.append('2');
-            if (enteredPin.length()==4 && enteredPin == pin) {
+            if (enteredPin.length()==4) {
                 this->loadFile(QLatin1String("html/select_type_of_voting_eng.html"));
                 enteredPin.clear();
             } else {
@@ -1314,7 +1316,7 @@ void Html5ApplicationViewer::onDataAvailable() {
         }
         if (string == "3") {
             enteredPin.append('3');
-            if (enteredPin.length()==4 && enteredPin == pin) {
+            if (enteredPin.length()==4) {
                 this->loadFile(QLatin1String("html/select_type_of_voting_eng.html"));
                 enteredPin.clear();
             } else {
@@ -1325,7 +1327,7 @@ void Html5ApplicationViewer::onDataAvailable() {
         }
         if (string == "4") {
             enteredPin.append('4');
-            if (enteredPin.length()==4 && enteredPin == pin) {
+            if (enteredPin.length()==4) {
                 this->loadFile(QLatin1String("html/select_type_of_voting_eng.html"));
                 enteredPin.clear();
             } else {
@@ -1336,7 +1338,7 @@ void Html5ApplicationViewer::onDataAvailable() {
         }
         if (string == "5") {
             enteredPin.append('5');
-            if (enteredPin.length()==4 && enteredPin == pin) {
+            if (enteredPin.length()==4) {
                 this->loadFile(QLatin1String("html/select_type_of_voting_eng.html"));
                 enteredPin.clear();
             } else {
@@ -1347,7 +1349,7 @@ void Html5ApplicationViewer::onDataAvailable() {
         }
         if (string == "6") {
             enteredPin.append('6');
-            if (enteredPin.length()==4 && enteredPin == pin) {
+            if (enteredPin.length()==4) {
                 this->loadFile(QLatin1String("html/select_type_of_voting_eng.html"));
                 enteredPin.clear();
             } else {
@@ -1358,7 +1360,7 @@ void Html5ApplicationViewer::onDataAvailable() {
         }
         if (string == "7") {
             enteredPin.append('7');
-            if (enteredPin.length()==4 && enteredPin == pin) {
+            if (enteredPin.length()==4) {
                 this->loadFile(QLatin1String("html/select_type_of_voting_eng.html"));
                 enteredPin.clear();
             } else {
@@ -1369,7 +1371,7 @@ void Html5ApplicationViewer::onDataAvailable() {
         }
         if (string == "8") {
             enteredPin.append('8');
-            if (enteredPin.length()==4 && enteredPin == pin) {
+            if (enteredPin.length()==4) {
                 this->loadFile(QLatin1String("html/select_type_of_voting_eng.html"));
                 enteredPin.clear();
             } else {
@@ -1380,7 +1382,7 @@ void Html5ApplicationViewer::onDataAvailable() {
         }
         if (string == "9") {
             enteredPin.append('9');
-            if (enteredPin.length()==4 && enteredPin == pin) {
+            if (enteredPin.length()==4) {
                 this->loadFile(QLatin1String("html/select_type_of_voting_eng.html"));
                 enteredPin.clear();
             } else {
@@ -1392,6 +1394,7 @@ void Html5ApplicationViewer::onDataAvailable() {
         if (string == "B") {
             enteredPin.clear();
         }
+        inputField.setAttribute("value", enteredPin);
         qDebug() << "Entered pin: " << enteredPin;
     }
     if (url.endsWith("find_out_eu1_eng.html")) {
@@ -1660,7 +1663,7 @@ void Html5ApplicationViewer::onDataAvailable() {
     }
     if (url.endsWith("select_european_proposal_eng.html")) {
         if (string == "G") {
-            this->loadFile(QLatin1String("html/proposal_european_2_eng.html"));
+            this->loadFile(QLatin1String("html/proposal_european_4_eng.html"));
             pageHistory.push("html/select_european_proposal_eng.html");
         }
         if (string == "H") {
@@ -1668,7 +1671,7 @@ void Html5ApplicationViewer::onDataAvailable() {
             pageHistory.push("html/select_european_proposal_eng.html");
         }
         if (string == "I") {
-            this->loadFile(QLatin1String("html/proposal_european_4_eng.html"));
+            this->loadFile(QLatin1String("html/proposal_european_2_eng.html"));
             pageHistory.push("html/select_european_proposal_eng.html");
         }
         if (string == "K") {
@@ -1685,7 +1688,7 @@ void Html5ApplicationViewer::onDataAvailable() {
     }
     if (url.endsWith("select_local_proposal_eng.html")) {
         if (string == "G") {
-            this->loadFile(QLatin1String("html/proposal_local_2_eng.html"));
+            this->loadFile(QLatin1String("html/proposal_local_4_eng.html"));
             pageHistory.push("html/select_local_proposal_eng.html");
         }
         if (string == "H") {
@@ -1693,7 +1696,7 @@ void Html5ApplicationViewer::onDataAvailable() {
             pageHistory.push("html/select_local_proposal_eng.html");
         }
         if (string == "I") {
-            this->loadFile(QLatin1String("html/proposal_local_4_eng.html"));
+            this->loadFile(QLatin1String("html/proposal_local_2_eng.html"));
             pageHistory.push("html/select_local_proposal_eng.html");
         }
         if (string == "K") {
@@ -1710,7 +1713,7 @@ void Html5ApplicationViewer::onDataAvailable() {
     }
     if (url.endsWith("select_national_proposal_eng.html")) {
         if (string == "G") {
-            this->loadFile(QLatin1String("html/proposal_national_2_eng.html"));
+            this->loadFile(QLatin1String("html/proposal_national_4_eng.html"));
             pageHistory.push("html/select_national_proposal_eng.html");
         }
         if (string == "H") {
@@ -1718,7 +1721,7 @@ void Html5ApplicationViewer::onDataAvailable() {
             pageHistory.push("html/select_national_proposal_eng.html");
         }
         if (string == "I") {
-            this->loadFile(QLatin1String("html/proposal_national_4_eng.html"));
+            this->loadFile(QLatin1String("html/proposal_national_2_eng.html"));
             pageHistory.push("html/select_national_proposal_eng.html");
         }
         if (string == "K") {
@@ -1789,9 +1792,10 @@ void Html5ApplicationViewer::onDataAvailable() {
         }
     }
     if (url.endsWith("enter_pin_slo.html")) {
+        QWebElement inputField = webView()->page()->currentFrame()->findFirstElement("input.pin");
         if (string == "0") {
             enteredPin.append('0');
-            if (enteredPin.length()==4 && enteredPin == pin) {
+            if (enteredPin.length()==4) {
                 this->loadFile(QLatin1String("html/select_type_of_voting_slo.html"));
                 enteredPin.clear();
             } else {
@@ -1802,7 +1806,7 @@ void Html5ApplicationViewer::onDataAvailable() {
         }
         if (string == "1") {
             enteredPin.append('1');
-            if (enteredPin.length()==4 && enteredPin == pin) {
+            if (enteredPin.length()==4) {
                 this->loadFile(QLatin1String("html/select_type_of_voting_slo.html"));
                 enteredPin.clear();
             } else {
@@ -1813,7 +1817,7 @@ void Html5ApplicationViewer::onDataAvailable() {
         }
         if (string == "2") {
             enteredPin.append('2');
-            if (enteredPin.length()==4 && enteredPin == pin) {
+            if (enteredPin.length()==4) {
                 this->loadFile(QLatin1String("html/select_type_of_voting_slo.html"));
                 enteredPin.clear();
             } else {
@@ -1824,7 +1828,7 @@ void Html5ApplicationViewer::onDataAvailable() {
         }
         if (string == "3") {
             enteredPin.append('3');
-            if (enteredPin.length()==4 && enteredPin == pin) {
+            if (enteredPin.length()==4) {
                 this->loadFile(QLatin1String("html/select_type_of_voting_slo.html"));
                 enteredPin.clear();
             } else {
@@ -1835,7 +1839,7 @@ void Html5ApplicationViewer::onDataAvailable() {
         }
         if (string == "4") {
             enteredPin.append('4');
-            if (enteredPin.length()==4 && enteredPin == pin) {
+            if (enteredPin.length()==4) {
                 this->loadFile(QLatin1String("html/select_type_of_voting_slo.html"));
                 enteredPin.clear();
             } else {
@@ -1846,7 +1850,7 @@ void Html5ApplicationViewer::onDataAvailable() {
         }
         if (string == "5") {
             enteredPin.append('5');
-            if (enteredPin.length()==4 && enteredPin == pin) {
+            if (enteredPin.length()==4) {
                 this->loadFile(QLatin1String("html/select_type_of_voting_slo.html"));
                 enteredPin.clear();
             } else {
@@ -1857,7 +1861,7 @@ void Html5ApplicationViewer::onDataAvailable() {
         }
         if (string == "6") {
             enteredPin.append('6');
-            if (enteredPin.length()==4 && enteredPin == pin) {
+            if (enteredPin.length()==4) {
                 this->loadFile(QLatin1String("html/select_type_of_voting_slo.html"));
                 enteredPin.clear();
             } else {
@@ -1868,7 +1872,7 @@ void Html5ApplicationViewer::onDataAvailable() {
         }
         if (string == "7") {
             enteredPin.append('7');
-            if (enteredPin.length()==4 && enteredPin == pin) {
+            if (enteredPin.length()==4) {
                 this->loadFile(QLatin1String("html/select_type_of_voting_slo.html"));
                 enteredPin.clear();
             } else {
@@ -1879,7 +1883,7 @@ void Html5ApplicationViewer::onDataAvailable() {
         }
         if (string == "8") {
             enteredPin.append('8');
-            if (enteredPin.length()==4 && enteredPin == pin) {
+            if (enteredPin.length()==4) {
                 this->loadFile(QLatin1String("html/select_type_of_voting_slo.html"));
                 enteredPin.clear();
             } else {
@@ -1890,7 +1894,7 @@ void Html5ApplicationViewer::onDataAvailable() {
         }
         if (string == "9") {
             enteredPin.append('9');
-            if (enteredPin.length()==4 && enteredPin == pin) {
+            if (enteredPin.length()==4) {
                 this->loadFile(QLatin1String("html/select_type_of_voting_slo.html"));
                 enteredPin.clear();
             } else {
@@ -1902,6 +1906,7 @@ void Html5ApplicationViewer::onDataAvailable() {
         if (string == "B") {
             enteredPin.clear();
         }
+        inputField.setAttribute("value", enteredPin);
         qDebug() << "Entered pin: " << enteredPin;
     }
     if (url.endsWith("find_out_eu1_slo.html")) {
@@ -2162,7 +2167,7 @@ void Html5ApplicationViewer::onDataAvailable() {
     }
     if (url.endsWith("select_european_proposal_slo.html")) {
         if (string == "G") {
-            this->loadFile(QLatin1String("html/proposal_european_2_slo.html"));
+            this->loadFile(QLatin1String("html/proposal_european_4_slo.html"));
             pageHistory.push("html/select_european_proposal_slo.html");
         }
         if (string == "H") {
@@ -2170,7 +2175,7 @@ void Html5ApplicationViewer::onDataAvailable() {
             pageHistory.push("html/select_european_proposal_slo.html");
         }
         if (string == "I") {
-            this->loadFile(QLatin1String("html/proposal_european_4_slo.html"));
+            this->loadFile(QLatin1String("html/proposal_european_2_slo.html"));
             pageHistory.push("html/select_european_proposal_slo.html");
         }
         if (string == "K") {
@@ -2187,7 +2192,7 @@ void Html5ApplicationViewer::onDataAvailable() {
     }
     if (url.endsWith("select_local_proposal_slo.html")) {
         if (string == "G") {
-            this->loadFile(QLatin1String("html/proposal_local_2_slo.html"));
+            this->loadFile(QLatin1String("html/proposal_local_4_slo.html"));
             pageHistory.push("html/select_local_proposal_slo.html");
         }
         if (string == "H") {
@@ -2195,7 +2200,7 @@ void Html5ApplicationViewer::onDataAvailable() {
             pageHistory.push("html/select_local_proposal_slo.html");
         }
         if (string == "I") {
-            this->loadFile(QLatin1String("html/proposal_local_4_slo.html"));
+            this->loadFile(QLatin1String("html/proposal_local_2_slo.html"));
             pageHistory.push("html/select_local_proposal_slo.html");
         }
         if (string == "K") {
@@ -2212,7 +2217,7 @@ void Html5ApplicationViewer::onDataAvailable() {
     }
     if (url.endsWith("select_national_proposal_slo.html")) {
         if (string == "G") {
-            this->loadFile(QLatin1String("html/proposal_national_2_slo.html"));
+            this->loadFile(QLatin1String("html/proposal_national_4_slo.html"));
             pageHistory.push("html/select_national_proposal_slo.html");
         }
         if (string == "H") {
@@ -2220,7 +2225,7 @@ void Html5ApplicationViewer::onDataAvailable() {
             pageHistory.push("html/select_national_proposal_slo.html");
         }
         if (string == "I") {
-            this->loadFile(QLatin1String("html/proposal_national_4_slo.html"));
+            this->loadFile(QLatin1String("html/proposal_national_2_slo.html"));
             pageHistory.push("html/select_national_proposal_slo.html");
         }
         if (string == "K") {
