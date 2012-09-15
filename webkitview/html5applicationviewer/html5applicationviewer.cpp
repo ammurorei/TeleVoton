@@ -22,6 +22,7 @@
 #include <QGraphicsWebView>
 #include <QString>
 #include <QTextStream>
+#include <QTimer>
 #include <QWebElement>
 #include <QWebFrame>
 
@@ -1166,6 +1167,10 @@ Html5ApplicationViewer::Html5ApplicationViewer(QWidget *parent)
         return;
     dataText = new QTextStream(dataFile);
     parseDataFile();
+
+    cancelTimeout.setSingleShot(true);
+    cancelTimeout.setInterval(1000);
+    connect(&cancelTimeout, SIGNAL(timeout()), this, SLOT(onCancelTimeout()));
 }
 
 Html5ApplicationViewer::~Html5ApplicationViewer()
@@ -1259,9 +1264,15 @@ void Html5ApplicationViewer::onDataAvailable() {
         }
         if (string == "K") {
             this->loadFile(QLatin1String("html/cancel_screen_2_eng.html"));
+            pageHistory.push("html/cancel_screen_1_eng.html");
         }
     }
     if (url.endsWith("cancel_screen_2_eng.html")) {
+        if (pageHistory.top() == "html/cancel_screen_1_eng.html") {
+            //nothing
+        } else {
+            cancelTimeout.start();
+        }
         if (string == "N") {
             this->loadFile(QLatin1String("html/select_type_of_voting_eng.html"));
         }
@@ -1269,6 +1280,7 @@ void Html5ApplicationViewer::onDataAvailable() {
     if (url.endsWith("end_voting_eng.html")) {
         if (string == "G") {
             this->loadFile(QLatin1String("html/cancel_screen_2_eng.html"));
+            cancelTimeout.start();
         }
         if (string == "K") {
             this->loadFile(QLatin1String("html/select_type_of_voting_eng.html"));
@@ -1470,11 +1482,11 @@ void Html5ApplicationViewer::onDataAvailable() {
     if (url.endsWith("language_selection.html")) {
         if (string == "G") {
             language = "eng";
-            this->loadFile(QLatin1String("html/select_type_of_voting_eng.html"));
+            this->loadFile(QLatin1String("html/enter_pin_eng.html"));
         }
         if (string == "K") {
             language = "slo";
-            this->loadFile(QLatin1String("html/select_type_of_voting_slo.html"));
+            this->loadFile(QLatin1String("html/enter_pin_slo.html"));
         }
     }
     if (url.endsWith("more_info.html")) {
@@ -1773,9 +1785,15 @@ void Html5ApplicationViewer::onDataAvailable() {
         }
         if (string == "K") {
             this->loadFile(QLatin1String("html/cancel_screen_2_slo.html"));
+            pageHistory.push("html/cancel_screen_1_slo.html");
         }
     }
     if (url.endsWith("cancel_screen_2_slo.html")) {
+        if (pageHistory.top() == "html/cancel_screen_1_slo.html") {
+            //nothing
+        } else {
+            cancelTimeout.start();
+        }
         if (string == "N") {
             this->loadFile(QLatin1String("html/select_type_of_voting_slo.html"));
         }
@@ -1783,6 +1801,7 @@ void Html5ApplicationViewer::onDataAvailable() {
     if (url.endsWith("end_voting_slo.html")) {
         if (string == "G") {
             this->loadFile(QLatin1String("html/cancel_screen_2_slo.html"));
+            cancelTimeout.start();
         }
         if (string == "K") {
             this->loadFile(QLatin1String("html/select_type_of_voting_slo.html"));
@@ -2262,15 +2281,27 @@ void Html5ApplicationViewer::onDataAvailable() {
     }
     if (string == "X") {
         if (language == "slo") {
+            if (pageHistory.top() == "html/cancel_screen_2_slo.html") {
+                this->loadFile(QLatin1String("html/welcome_page.html"));
+            }
             this->loadFile(QLatin1String("html/cancel_screen_2_slo.html"));
+            cancelTimeout.start();
         } else {
+            if (pageHistory.top() == "html/cancel_screen_2_eng.html") {
+                this->loadFile(QLatin1String("html/welcome_page.html"));
+            }
             this->loadFile(QLatin1String("html/cancel_screen_2_eng.html"));
+            cancelTimeout.start();
         }
     }
 }
 
 void Html5ApplicationViewer::onFileChange() {
     parseDataFile();
+}
+
+void Html5ApplicationViewer::onCancelTimeout() {
+    this->loadFile(QLatin1String("html/welcome_page.html"));
 }
 
 QStringList* Html5ApplicationViewer::parseDataFile() {

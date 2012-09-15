@@ -16,6 +16,7 @@
 #include <QStack>
 #include <QStringList>
 #include <QTextStream>
+#include <QTimer>
 #include <QUrl>
 #include <QWidget>
 
@@ -50,6 +51,7 @@ public:
  public slots:
     void onDataAvailable();
     void onFileChange();
+    void onCancelTimeout();
 
 private:
     class Html5ApplicationViewerPrivate *m_d;
@@ -63,6 +65,7 @@ private:
     QString pin;
     QString enteredPin;
     QString language;
+    QTimer cancelTimeout;
 };
 
 #endif // HTML5APPLICATIONVIEWER_H
