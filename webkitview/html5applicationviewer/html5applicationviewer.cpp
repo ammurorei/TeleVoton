@@ -1469,9 +1469,11 @@ void Html5ApplicationViewer::onDataAvailable() {
     }
     if (url.endsWith("language_selection.html")) {
         if (string == "G") {
+            language = "eng";
             this->loadFile(QLatin1String("html/select_type_of_voting_eng.html"));
         }
         if (string == "K") {
+            language = "slo";
             this->loadFile(QLatin1String("html/select_type_of_voting_slo.html"));
         }
     }
@@ -1755,7 +1757,7 @@ void Html5ApplicationViewer::onDataAvailable() {
         }
     }
     if (url.endsWith("welcome_page.html")) {
-        if (string == "N" /* && dataStrings->count()==2 */) {
+        if (string == "N" || string == "Y" ) {
             this->loadFile(QLatin1String("html/language_selection.html"));
             pageHistory.push("html/welcome_page.html");
         }
@@ -2256,6 +2258,13 @@ void Html5ApplicationViewer::onDataAvailable() {
         if (string == "K") {
             this->loadFile(QLatin1String("html/help_areas_slo.html"));
             pageHistory.push("html/select_type_of_voting_slo.html");
+        }
+    }
+    if (string == "X") {
+        if (language == "slo") {
+            this->loadFile(QLatin1String("html/cancel_screen_2_slo.html"));
+        } else {
+            this->loadFile(QLatin1String("html/cancel_screen_2_eng.html"));
         }
     }
 }
